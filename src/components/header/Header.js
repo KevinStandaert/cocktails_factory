@@ -23,7 +23,7 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 flex items-center justify-between bg-gradient-to-r from-lily-500 to-black px-4 text-sm font-bold">
+    <header className="from-metal-300 sticky top-0 z-50 flex items-center justify-between bg-gradient-to-r to-black px-4 text-sm font-bold">
       <Link className="transition-all hover:scale-105 active:blur-sm" href="/">
         <Image
           className="-mb-3 -mt-3"
@@ -37,6 +37,7 @@ const Header = () => {
       {/* menu mobile screen */}
       <div className="relative md:hidden">
         <button
+          aria-label="Ouvrir le menu"
           className={`${isMenuOpen ? "hidden" : "block"} p-2`}
           onClick={toggleMenu}
         >
@@ -48,9 +49,10 @@ const Header = () => {
       </div>
 
       <div
-        className={`${isMenuOpen ? "flex" : "hidden"} fixed inset-0 z-10 mx-8 mt-[25%] h-[50%] items-center justify-center rounded-lg bg-serria-200 bg-opacity-90 p-4 text-lily-950`}
+        className={`${isMenuOpen ? "flex" : "hidden"} text-metal-950 fixed inset-0 z-10 mx-8 mt-[25%] h-[50%] items-center justify-center rounded-lg bg-serria-200 bg-opacity-90 p-4`}
       >
         <button
+          aria-label="Fermer le menu"
           className={`${isMenuOpen ? "block" : "hidden"} absolute right-2 top-4 p-2`}
           onClick={toggleMenu}
         >
@@ -60,7 +62,7 @@ const Header = () => {
           />
         </button>
         <nav>
-          <ul className="flex flex-col gap-8 text-lg ">
+          <ul className="flex flex-col gap-8 text-lg">
             <li onClick={handleLinkClick}>
               <Link className="flex items-center" href="/">
                 <FontAwesomeIcon

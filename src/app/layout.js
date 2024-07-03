@@ -13,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
-      <body className={`${roboto.className} bg-gradient-to-r from-lily-500 to-black`}>
+      <body className={`${roboto.className} bg-gradient-to-r from-metal-300 to-black`}>
         <Header />
         {children}
       </body>
