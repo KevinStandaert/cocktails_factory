@@ -60,7 +60,7 @@ const Header = () => {
           />
         </button>
         <nav>
-          <ul className="flex flex-col gap-8 text-xl">
+          <ul className="flex flex-col gap-8 text-lg ">
             <li onClick={handleLinkClick}>
               <Link className="flex items-center" href="/">
                 <FontAwesomeIcon
