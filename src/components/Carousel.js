@@ -44,7 +44,7 @@ const cocktails = [
 ];
 
 const Carousel = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(1);
 
   const handlePrevClick = () => {
     setCurrentIndex((prevIndex) =>
@@ -58,8 +58,6 @@ const Carousel = () => {
     );
   };
 
-  
-
   return (
     <div className="relative flex items-center justify-center text-metal-950 sm:py-16">
       <button className="absolute left-0 z-20" onClick={handlePrevClick}>
@@ -70,42 +68,55 @@ const Carousel = () => {
       </button>
       <div className="relative flex h-[500px] w-[350px] items-center justify-center overflow-hidden sm:w-[600px]">
         {cocktails.map((cocktail, index) => {
-          // Calcul de l'indice réel à afficher
-          let displayIndex = (currentIndex + index) % cocktails.length;
+          let position;
+          if (index === currentIndex) {
+            position = "center";
+          } else {
+            position = "side";
+          }
 
-          // Gestion des styles
-          const isActive = index === 1; // Toujours afficher l'élément au milieu (index 1 dans le tableau) comme actif
-          const position = isActive ? "center" : "side";
-          const scale = isActive ? "scale-100" : "scale-75";
-          const blur = position !== "center" ? "blur-sm" : "";
+          let scale;
+          if (position === "center") {
+            scale = "scale-100";
+          } else {
+            scale = "scale-75";
+          }
 
-          
+          let blur;
+          if (position !== "center") {
+            blur = "blur-sm";
+          } else {
+            blur = "";
+          }
 
           return (
             <div
               key={cocktail.id}
-              className={`absolute transition-all duration-700 ease-in-out transform translate-x-full ${position}`}
+              className={`absolute transition-all duration-[800ms] ${position}`}
               style={{
-                transform: `translateX(${(index - 1) * 100}%) `,
+                transform: `translateX(${
+                  position === "center" ? 0 : (index - currentIndex) * 100
+                }%)`,
+                zIndex: position === "center" ? 10 : 1,
               }}
             >
               <div
-                className={`mx-4 flex flex-col items-center justify-between rounded-xl bg-serria-300 bg-opacity-10 p-6 sm:-mx-2 sm:h-96 sm:w-64 ${scale} ${blur}`}
+                className={`mx-6 flex flex-col items-center justify-between rounded-xl bg-serria-300 bg-opacity-10 p-4 sm:-mx-2 sm:h-96 sm:w-64 ${scale} ${blur}`}
               >
                 <Image
-                  src={cocktails[displayIndex].image}
-                  alt={cocktails[displayIndex].name}
+                  src={cocktail.image}
+                  alt={cocktail.name}
                   width={250}
                   height={200}
                   className="h-48 w-auto rounded-xl"
                 />
                 <h2 className="font-bold text-serria-500 sm:text-2xl">
-                  {cocktails[displayIndex].name}
+                  {cocktail.name}
                 </h2>
                 <p className="text-center text-xs sm:text-sm">
-                  {cocktails[displayIndex].ingredients}
+                  {cocktail.ingredients}
                 </p>
-                <p className="text-sm">{cocktails[displayIndex].taste}</p>
+                <p className="text-sm">{cocktail.taste}</p>
               </div>
             </div>
           );
@@ -119,6 +130,17 @@ const Carousel = () => {
       </button>
     </div>
   );
+};
+
+// Fonction utilitaire pour déterminer la position des éléments dans le carousel
+const getPosition = (index, currentIndex, length) => {
+  const middleIndex = length / 2;
+  if (index === currentIndex) return "center";
+  if (index < currentIndex && index >= currentIndex - middleIndex)
+    return "left";
+  if (index > currentIndex && index <= currentIndex + middleIndex)
+    return "right";
+  return "hidden";
 };
 
 export default Carousel;
