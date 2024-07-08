@@ -23,7 +23,7 @@ const Header = () => {
   };
 
   return (
-    <header className="from-metal-300 sticky top-0 z-50 flex items-center justify-between bg-gradient-to-r to-black px-4 text-sm font-bold">
+    <header className="from-metal-400 sticky top-0 z-50 flex items-center justify-between bg-gradient-to-r to-black px-4 text-sm font-bold">
       <Link className="transition-all hover:scale-105 active:blur-sm" href="/">
         <Image
           className="-mb-3 -mt-3 h-auto w-40"

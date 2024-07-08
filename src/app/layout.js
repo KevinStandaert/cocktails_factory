@@ -1,6 +1,7 @@
 import { Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
+import Footer from "../components/Footer";
 
 const roboto = Roboto_Mono({ subsets: ["latin"] });
 
@@ -13,9 +14,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
-      <body className={`${roboto.className} bg-gradient-to-r from-metal-300 to-black`}>
+      <body className={`${roboto.className} bg-gradient-to-r from-metal-400 to-black`}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

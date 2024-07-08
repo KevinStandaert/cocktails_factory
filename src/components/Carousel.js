@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { fetchData } from "../utils/apiClient";
 
-
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(1);
   const [cocktails, setCocktails] = useState([]);
@@ -25,7 +24,6 @@ const Carousel = () => {
     getCocktails();
   }, []);
 
-
   const handlePrevClick = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? cocktails.length - 1 : prevIndex - 1,
@@ -39,7 +37,7 @@ const Carousel = () => {
   };
 
   if (loading) {
-    return <div>Chargement...</div>;
+    return <div className="mt-24 text-xl">Chargement...</div>;
   }
 
   return (
@@ -75,7 +73,7 @@ const Carousel = () => {
 
           return (
             <div
-              key={cocktail.name}
+              key={cocktail.id}
               className={`absolute transition-all duration-[800ms] ${position}`}
               style={{
                 transform: `translateX(${
@@ -85,22 +83,24 @@ const Carousel = () => {
               }}
             >
               <div
-                className={`mx-6 flex flex-col items-center justify-between rounded-xl bg-serria-300 bg-opacity-10 p-4 sm:-mx-2 sm:h-96 sm:w-64 ${scale} ${blur}`}
+                className={`mx-10 flex h-72 flex-col items-center justify-between rounded-xl bg-serria-300 bg-opacity-10 p-4 sm:-mx-2 sm:h-96 sm:w-64 ${scale} ${blur}`}
               >
                 <Image
                   src={"/cocktail1.jpg"}
                   alt={cocktail.name}
                   width={250}
                   height={200}
-                  className="h-48 w-auto rounded-xl"
+                  className="h-36 w-auto rounded-xl sm:h-48"
                 />
                 <h2 className="font-bold text-serria-500 sm:text-2xl">
                   {cocktail.name}
                 </h2>
                 <p className="text-center text-xs sm:text-sm">
-                  {cocktail.ingredients}
+                  {cocktail.ingredients.join(", ")}
                 </p>
-                
+                <p className="text-center text-xs sm:text-sm">
+                  {cocktail.taste}
+                </p>
               </div>
             </div>
           );
