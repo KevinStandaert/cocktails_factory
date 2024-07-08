@@ -1,50 +1,30 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { fetchData } from "../utils/apiClient";
 
-const cocktails = [
-  {
-    id: 1,
-    name: "Cocktail 1",
-    image: "/cocktail1.jpg",
-    ingredients: "Ingrédient 1, Ingrédient 2",
-    taste: "Doux",
-  },
-  {
-    id: 2,
-    name: "Cocktail 2",
-    image: "/cocktail2.jpg",
-    ingredients: "Ingrédient 3, Ingrédient 4",
-    taste: "Aigre",
-  },
-  {
-    id: 3,
-    name: "Cocktail 3",
-    image: "/cocktail3.jpg",
-    ingredients: "Ingrédient 5, Ingrédient 6",
-    taste: "Amer",
-  },
-  {
-    id: 4,
-    name: "Cocktail 4",
-    image: "/cocktail4.jpg",
-    ingredients: "Ingrédient 7, Ingrédient 8",
-    taste: "Sucré",
-  },
-  {
-    id: 5,
-    name: "Cocktail 5",
-    image: "/cocktail5.jpg",
-    ingredients: "Ingrédient 9, Ingrédient 10",
-    taste: "Salé",
-  },
-];
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(1);
+  const [cocktails, setCocktails] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const getCocktails = async () => {
+      try {
+        const data = await fetchData("/recipes/cards/random");
+        setCocktails(data);
+        setLoading(false);
+      } catch (error) {
+        console.error("Erreur de récupération des cocktails:", error);
+      }
+    };
+    getCocktails();
+  }, []);
+
 
   const handlePrevClick = () => {
     setCurrentIndex((prevIndex) =>
@@ -57,6 +37,10 @@ const Carousel = () => {
       prevIndex === cocktails.length - 1 ? 0 : prevIndex + 1,
     );
   };
+
+  if (loading) {
+    return <div>Chargement...</div>;
+  }
 
   return (
     <div className="relative flex items-center justify-center text-metal-950 sm:py-16">
@@ -91,7 +75,7 @@ const Carousel = () => {
 
           return (
             <div
-              key={cocktail.id}
+              key={cocktail.name}
               className={`absolute transition-all duration-[800ms] ${position}`}
               style={{
                 transform: `translateX(${
@@ -104,7 +88,7 @@ const Carousel = () => {
                 className={`mx-6 flex flex-col items-center justify-between rounded-xl bg-serria-300 bg-opacity-10 p-4 sm:-mx-2 sm:h-96 sm:w-64 ${scale} ${blur}`}
               >
                 <Image
-                  src={cocktail.image}
+                  src={"/cocktail1.jpg"}
                   alt={cocktail.name}
                   width={250}
                   height={200}
@@ -116,7 +100,7 @@ const Carousel = () => {
                 <p className="text-center text-xs sm:text-sm">
                   {cocktail.ingredients}
                 </p>
-                <p className="text-sm">{cocktail.taste}</p>
+                
               </div>
             </div>
           );
@@ -130,17 +114,6 @@ const Carousel = () => {
       </button>
     </div>
   );
-};
-
-// Fonction utilitaire pour déterminer la position des éléments dans le carousel
-const getPosition = (index, currentIndex, length) => {
-  const middleIndex = length / 2;
-  if (index === currentIndex) return "center";
-  if (index < currentIndex && index >= currentIndex - middleIndex)
-    return "left";
-  if (index > currentIndex && index <= currentIndex + middleIndex)
-    return "right";
-  return "hidden";
 };
 
 export default Carousel;
