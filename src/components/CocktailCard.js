@@ -1,29 +1,19 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
-import { fetchData } from "../utils/apiClient";
+import useFetchData from "../utils/apiClient";
 
-const CocktailCard = () => {
-  const [cocktails, setCocktails] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const getCocktails = async () => {
-      try {
-        const data = await fetchData("/recipes/cards");
-        setCocktails(data);
-        setLoading(false);
-      } catch (error) {
-        console.error("Erreur de récupération des cocktails:", error);
-      }
-    };
-    getCocktails();
-  }, []);
+const CocktailCard = ({ dataUrl }) => {
+  const { data: cocktails, loading, error } = useFetchData(dataUrl);
 
   if (loading) {
     return <div className="mt-24 text-xl">Chargement...</div>;
   }
+  if (error) {
+    return <div className="mt-24 text-xl">Erreur de chargement...</div>;
+  }
+
   return cocktails.map((cocktail) => (
     <div
       key={cocktail.id}

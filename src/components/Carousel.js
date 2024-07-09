@@ -1,28 +1,15 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { fetchData } from "../utils/apiClient";
+import useFetchData from "../utils/apiClient";
 
-const Carousel = () => {
+const Carousel = ({ dataUrl }) => {
   const [currentIndex, setCurrentIndex] = useState(1);
-  const [cocktails, setCocktails] = useState([]);
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const getCocktails = async () => {
-      try {
-        const data = await fetchData("/recipes/cards/random");
-        setCocktails(data);
-        setLoading(false);
-      } catch (error) {
-        console.error("Erreur de récupération des cocktails:", error);
-      }
-    };
-    getCocktails();
-  }, []);
+  const { data: cocktails, loading, error } = useFetchData(dataUrl);
 
   const handlePrevClick = () => {
     setCurrentIndex((prevIndex) =>
@@ -37,12 +24,19 @@ const Carousel = () => {
   };
 
   if (loading) {
-    return <div className="mt-24 text-xl">Chargement...</div>;
+    return <div className="my-36 text-xl">Chargement...</div>;
+  }
+  if (error) {
+    return <div className="my-36 text-xl">Erreur de chargement...</div>;
   }
 
   return (
     <div className="relative flex items-center justify-center text-metal-950 sm:py-16">
-      <button aria-label="recette precedente" className="absolute left-0 z-20" onClick={handlePrevClick}>
+      <button
+        aria-label="recette precedente"
+        className="absolute left-0 z-20"
+        onClick={handlePrevClick}
+      >
         <FontAwesomeIcon
           icon={faArrowLeft}
           className="h-8 w-8 text-metal-950"
@@ -106,7 +100,11 @@ const Carousel = () => {
           );
         })}
       </div>
-      <button aria-label="image suivante" className="absolute right-0 z-20" onClick={handleNextClick}>
+      <button
+        aria-label="image suivante"
+        className="absolute right-0 z-20"
+        onClick={handleNextClick}
+      >
         <FontAwesomeIcon
           icon={faArrowRight}
           className="h-8 w-8 text-metal-300 sm:text-metal-950"

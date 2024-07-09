@@ -1,7 +1,9 @@
 import React from "react";
 import CocktailCard from "../../components/CocktailCard";
 
-const recettes = () => {
+const recipes = () => {
+  const dataUrl = "/recipes/cards";
+
   return (
     <main className="flex min-h-screen flex-col items-center p-12 md:p-36">
       <div className="flex flex-col gap-2 text-center">
@@ -9,11 +11,11 @@ const recettes = () => {
           Recettes de cocktails
         </h1>
         <div className="grid gap-20 md:grid-cols-2 lg:grid-cols-3">
-          <CocktailCard />
+          <CocktailCard dataUrl={dataUrl} />
         </div>
       </div>
     </main>
   );
 };
 
-export default recettes;
+export default recipes;
