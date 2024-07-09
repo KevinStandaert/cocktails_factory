@@ -42,7 +42,7 @@ const Carousel = () => {
 
   return (
     <div className="relative flex items-center justify-center text-metal-950 sm:py-16">
-      <button className="absolute left-0 z-20" onClick={handlePrevClick}>
+      <button aria-label="recette precedente" className="absolute left-0 z-20" onClick={handlePrevClick}>
         <FontAwesomeIcon
           icon={faArrowLeft}
           className="h-8 w-8 text-metal-950"
@@ -106,7 +106,7 @@ const Carousel = () => {
           );
         })}
       </div>
-      <button className="absolute right-0 z-20" onClick={handleNextClick}>
+      <button aria-label="image suivante" className="absolute right-0 z-20" onClick={handleNextClick}>
         <FontAwesomeIcon
           icon={faArrowRight}
           className="h-8 w-8 text-metal-300 sm:text-metal-950"
