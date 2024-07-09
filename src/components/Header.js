@@ -23,7 +23,7 @@ const Header = () => {
   };
 
   return (
-    <header className="from-metal-400 sticky top-0 z-50 flex items-center justify-between bg-gradient-to-r to-black px-4 text-sm font-bold">
+    <header className="sticky top-0 z-50 flex items-center justify-between bg-gradient-to-r from-metal-400 to-black px-4 text-sm font-bold">
       <Link className="transition-all hover:scale-105 active:blur-sm" href="/">
         <Image
           className="-mb-3 -mt-3 h-auto w-40"
@@ -49,7 +49,7 @@ const Header = () => {
       </div>
 
       <div
-        className={`${isMenuOpen ? "flex" : "hidden"} text-metal-950 fixed inset-0 z-10 mx-8 mt-[25%] h-[50%] items-center justify-center rounded-lg bg-serria-200 bg-opacity-90 p-4`}
+        className={`${isMenuOpen ? "flex" : "hidden"} fixed inset-0 z-10 mx-8 mt-[25%] h-[50%] items-center justify-center rounded-lg bg-serria-200 bg-opacity-90 p-4 text-metal-950`}
       >
         <button
           aria-label="Fermer le menu"
@@ -69,9 +69,9 @@ const Header = () => {
                   className="mr-2 w-8 text-serria-500"
                   icon={faMartiniGlass}
                 />
-                <span className="transition-all hover:scale-105 hover:text-serria-500 active:text-serria-700">
+                <strong className="transition-all hover:scale-105 hover:text-serria-500 active:text-serria-700">
                   Recettes de cocktails
-                </span>
+                </strong>
               </Link>
             </li>
             <li onClick={handleLinkClick}>
@@ -80,9 +80,9 @@ const Header = () => {
                   className="mr-2 w-8 text-serria-500"
                   icon={faWandMagicSparkles}
                 />
-                <span className="transition-all hover:scale-105 hover:text-serria-500 active:text-serria-700">
+                <strong className="transition-all hover:scale-105 hover:text-serria-500 active:text-serria-700">
                   L&apos;art du cocktail
-                </span>
+                </strong>
               </Link>
             </li>
             <li onClick={handleLinkClick}>
@@ -91,9 +91,9 @@ const Header = () => {
                   className="mr-2 w-8 text-serria-500"
                   icon={faShop}
                 />
-                <span className="transition-all hover:scale-105 hover:text-serria-500 active:text-serria-700">
+                <strong className="transition-all hover:scale-105 hover:text-serria-500 active:text-serria-700">
                   Où acheter ?
-                </span>
+                </strong>
               </Link>
             </li>
           </ul>
@@ -109,9 +109,9 @@ const Header = () => {
                 className="mr-2 w-8 text-serria-500"
                 icon={faMartiniGlass}
               />
-              <span className="transition-all hover:scale-105 hover:text-serria-500 active:text-serria-700">
+              <strong className="transition-all py-6 hover:scale-105 hover:text-serria-500 active:text-serria-700">
                 Recettes de cocktails
-              </span>
+              </strong>
             </Link>
           </li>
           <li>
@@ -120,9 +120,9 @@ const Header = () => {
                 className="mr-2 w-8 text-serria-500"
                 icon={faWandMagicSparkles}
               />
-              <span className="transition-all hover:scale-105 hover:text-serria-500 active:text-serria-700">
+              <strong className="transition-all py-6 hover:scale-105 hover:text-serria-500 active:text-serria-700">
                 L&apos;art du cocktail
-              </span>
+              </strong>
             </Link>
           </li>
           <li>
@@ -131,9 +131,9 @@ const Header = () => {
                 className="mr-2 w-8 text-serria-500"
                 icon={faShop}
               />
-              <span className="transition-all hover:scale-105 hover:text-serria-500 active:text-serria-700">
+              <strong className="transition-all py-6 hover:scale-105 hover:text-serria-500 active:text-serria-700">
                 Où acheter ?
-              </span>
+              </strong>
             </Link>
           </li>
         </ul>

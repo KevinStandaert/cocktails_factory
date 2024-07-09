@@ -1,5 +1,7 @@
-import Image from "next/image";
+import "server-only";
+
 import Carousel from "../components/Carousel";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -9,8 +11,8 @@ export default function Home() {
           Découvrez l&apos;Art du Cocktail avec
         </h2>
         <h1 className="text-2xl font-bold md:text-6xl">
-          COC<span className="text-serria-500">K</span>TAIL
-          <span className="text-serria-500">S</span> FACTORY
+          COC<strong className="text-serria-500">K</strong>TAIL
+          <strong className="text-serria-500">S</strong> FACTORY
         </h1>
         <h2 className="ms:mt-8 mt-6 text-xs md:px-24 md:text-lg">
           Bienvenue sur Cocktails Factory, votre destination ultime pour
@@ -20,57 +22,87 @@ export default function Home() {
           créativité et de raffinement.
         </h2>
       </div>
-      <h3 className="text-md -mb-20 mt-20 sm:mt-36 sm:text-3xl">
-        <span className="font-bold text-serria-500">Inspirations</span> du
+      <h3 className="-mb-20 mt-20 sm:mt-36 sm:text-3xl">
+        <strong className="font-bold text-serria-500">Inspirations</strong> du
         moments
       </h3>
       <Carousel />
-      <h3 className="text-md mb-8 mt-20 self-start px-4 sm:mt-36 sm:text-3xl">
-        Ce que nous vous
-        <span className="font-bold text-serria-500"> offrons</span>
-      </h3>
-      <div className="flex flex-col px-4 text-xs md:text-lg">
-        <ul className="flex flex-col gap-8">
+
+      <div className="mb-20 flex max-w-[1920px] flex-col rounded-xl bg-serria-300 bg-opacity-10 px-8 py-10 text-xs sm:py-20 md:text-lg">
+        <h3 className="mb-8 self-start text-base sm:text-3xl">
+          Ce que nous vous
+          <strong className="font-bold text-serria-500"> offrons</strong>
+        </h3>
+        <ul className="flex flex-col gap-6">
           <li>
-            <span className="font-bold text-serria-500">
+            <Link
+              className="py-6 font-bold text-serria-500 transition-all hover:text-serria-400 active:text-serria-800"
+              href="/"
+            >
               Recettes Authentiques et Innovantes
-            </span>
+            </Link>
             : Parcourez notre collection de recettes de cocktails classiques et
             contemporains, toutes conçues pour éveiller vos papilles et éblouir
             vos invités.
           </li>
           <li>
-            <span className="font-bold text-serria-500">Guides et Astuces</span>
+            <Link
+              className="py-6 font-bold text-serria-500 transition-all hover:text-serria-400 active:text-serria-800"
+              href="/"
+            >
+              Guides et Astuces
+            </Link>
             : Apprenez les techniques de préparation des cocktails comme un
             professionnel grâce à nos guides détaillés et nos conseils
             pratiques.
           </li>
           <li>
-            <span className="font-bold text-serria-500">
+            <Link
+              className="py-6 font-bold text-serria-500 transition-all hover:text-serria-400 active:text-serria-800"
+              href="/"
+            >
               Exploration des Ingrédients
-            </span>
+            </Link>
             : Découvrez les ingrédients clés qui transforment chaque cocktail en
             une expérience sensorielle unique.
           </li>
         </ul>
       </div>
-      <h3 className="text-md mb-8 mt-20 self-start px-4 sm:mt-36 sm:text-3xl">
-        <span className="font-bold text-serria-500">Pourquoi </span>nous choisir
-        ?
-      </h3>
-      <p className="px-4 text-xs md:text-lg">
-        Chez Coc<span className="font-bold text-serria-500">k</span>tail
-        <span className="font-bold text-serria-500">s </span> Factory, nous
-        célébrons l&apos;art du cocktail avec passion et dévotion. Notre mission
-        est de vous inspirer à créer des moments mémorables autour de boissons
-        savoureuses et élégantes. Rejoignez notre communauté et laissez-vous
-        séduire par l&apos;art de l&apos;assemblage des saveurs et des arômes.{" "}
-        <br />
-        <br /> Explorez, apprenez, créez et partagez votre amour pour les
-        cocktails avec Coc<span className="font-bold text-serria-500">k</span>
-        tail<span className="font-bold text-serria-500">s </span> Factory.
-      </p>
-      <footer></footer>
+      <div className="mb-20 flex max-w-[1920px] flex-col rounded-xl bg-serria-300 bg-opacity-10 px-8 py-10 text-xs sm:py-20 md:text-lg">
+        <h3 className="mb-8 self-start text-base sm:text-3xl">
+          <strong className="font-bold text-serria-500">Pourquoi </strong> nous
+          choisir ?
+        </h3>
+        <ul className="flex flex-col gap-6">
+          <li>
+            Chez Coc<span className="font-bold text-serria-500">k</span>tail
+            <span className="font-bold text-serria-500">s </span> Factory, nous
+            célébrons l&apos;art du cocktail avec passion et dévotion. Notre
+            mission est de vous inspirer à créer des moments mémorables autour
+            de boissons savoureuses et élégantes. Rejoignez notre communauté et
+            laissez-vous séduire par l&apos;art de l&apos;assemblage des saveurs
+            et des arômes.
+          </li>
+          <li>
+            Explorez, apprenez, créez et partagez votre amour pour les cocktails
+            avec Coc<span className="font-bold text-serria-500">k</span>
+            tail<span className="font-bold text-serria-500">s </span> Factory.
+          </li>
+        </ul>
+      </div>
+      <div className="mb-20 flex max-w-[1920px] flex-col rounded-xl bg-serria-300 bg-opacity-10 px-8 py-10 text-xs sm:py-20 md:text-lg">
+        <h3 className="mb-8 self-start text-base sm:text-3xl">
+          Notre<strong className="font-bold text-serria-500"> Engagement </strong>envers la Qualité
+        </h3>
+        <ul className="flex flex-col gap-6">
+          <li>
+          La<strong className="font-bold text-serria-500"> qualité </strong>est au coeur de tout ce que nous faisons. Nous nous engageons à vous offrir des recettes de cocktails de la plus haute qualité, élaborées avec des ingrédients soigneusement sélectionnés et testées par nos<strong className="font-bold text-serria-500"> experts en mixologie</strong>. Chaque cocktail est conçu pour offrir une expérience gustative exceptionnelle, garantissant que chaque gorgée est un véritable plaisir.
+          </li>
+          <li>
+          Rejoignez-nous dans cette quête de l&apos;excellence et découvrez la différence qu&apos;une approche axée sur la qualité peut faire dans<strong className="font-bold text-serria-500"> l&apos;art de la mixologie</strong>.
+          </li>
+        </ul>
+      </div>
     </main>
   );
 }
