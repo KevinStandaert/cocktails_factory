@@ -64,7 +64,7 @@ const Header = () => {
         <nav>
           <ul className="flex flex-col gap-8 text-lg">
             <li onClick={handleLinkClick}>
-              <Link className="flex items-center" href="/">
+              <Link className="flex items-center" href="/recipes">
                 <FontAwesomeIcon
                   className="mr-2 w-8 text-serria-500"
                   icon={faMartiniGlass}
@@ -104,7 +104,7 @@ const Header = () => {
       <nav className="hidden items-center gap-6 md:flex">
         <ul className="mr-2 flex items-center gap-6">
           <li>
-            <Link className="flex items-center" href="/">
+            <Link className="flex items-center" href="/recipes">
               <FontAwesomeIcon
                 className="mr-2 w-8 text-serria-500"
                 icon={faMartiniGlass}

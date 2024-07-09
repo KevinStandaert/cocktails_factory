@@ -37,7 +37,7 @@ export default function Home() {
           <li>
             <Link
               className="py-6 font-bold text-serria-500 transition-all hover:text-serria-400 active:text-serria-800"
-              href="/"
+              href="/recipes"
             >
               Recettes Authentiques et Innovantes
             </Link>
@@ -92,14 +92,32 @@ export default function Home() {
       </div>
       <div className="mb-20 flex max-w-[1920px] flex-col rounded-xl bg-serria-300 bg-opacity-10 px-8 py-10 text-xs sm:py-20 md:text-lg">
         <h3 className="mb-8 self-start text-base sm:text-3xl">
-          Notre<strong className="font-bold text-serria-500"> Engagement </strong>envers la Qualité
+          Notre
+          <strong className="font-bold text-serria-500"> Engagement </strong>
+          envers la Qualité
         </h3>
         <ul className="flex flex-col gap-6">
           <li>
-          La<strong className="font-bold text-serria-500"> qualité </strong>est au coeur de tout ce que nous faisons. Nous nous engageons à vous offrir des recettes de cocktails de la plus haute qualité, élaborées avec des ingrédients soigneusement sélectionnés et testées par nos<strong className="font-bold text-serria-500"> experts en mixologie</strong>. Chaque cocktail est conçu pour offrir une expérience gustative exceptionnelle, garantissant que chaque gorgée est un véritable plaisir.
+            La<strong className="font-bold text-serria-500"> qualité </strong>
+            est au coeur de tout ce que nous faisons. Nous nous engageons à vous
+            offrir des recettes de cocktails de la plus haute qualité, élaborées
+            avec des ingrédients soigneusement sélectionnés et testées par nos
+            <strong className="font-bold text-serria-500">
+              {" "}
+              experts en mixologie
+            </strong>
+            . Chaque cocktail est conçu pour offrir une expérience gustative
+            exceptionnelle, garantissant que chaque gorgée est un véritable
+            plaisir.
           </li>
           <li>
-          Rejoignez-nous dans cette quête de l&apos;excellence et découvrez la différence qu&apos;une approche axée sur la qualité peut faire dans<strong className="font-bold text-serria-500"> l&apos;art de la mixologie</strong>.
+            Rejoignez-nous dans cette quête de l&apos;excellence et découvrez la
+            différence qu&apos;une approche axée sur la qualité peut faire dans
+            <strong className="font-bold text-serria-500">
+              {" "}
+              l&apos;art de la mixologie
+            </strong>
+            .
           </li>
         </ul>
       </div>
