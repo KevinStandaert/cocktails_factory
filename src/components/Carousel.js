@@ -5,6 +5,7 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import useFetchData from "../utils/apiClient";
+import Link from "next/link";
 
 const Carousel = ({ dataUrl }) => {
   const [currentIndex, setCurrentIndex] = useState(1);
@@ -76,7 +77,8 @@ const Carousel = ({ dataUrl }) => {
                 zIndex: position === "center" ? 10 : 1,
               }}
             >
-              <div
+              <Link
+                href={`/recipes/${cocktail.id}`}
                 className={`mx-10 flex h-72 flex-col items-center justify-between rounded-xl bg-serria-300 bg-opacity-10 p-4 sm:-mx-2 sm:h-96 sm:w-64 ${scale} ${blur}`}
               >
                 <Image
@@ -95,7 +97,7 @@ const Carousel = ({ dataUrl }) => {
                 <p className="text-center text-xs sm:text-sm">
                   {cocktail.taste}
                 </p>
-              </div>
+              </Link>
             </div>
           );
         })}

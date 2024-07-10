@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import useFetchData from "../utils/apiClient";
+import Link from "next/link";
 
 const CocktailCard = ({ dataUrl }) => {
   const { data: cocktails, loading, error } = useFetchData(dataUrl);
@@ -15,9 +16,10 @@ const CocktailCard = ({ dataUrl }) => {
   }
 
   return cocktails.map((cocktail) => (
-    <div
+    <Link
+      href={`/recipes/${cocktail.id}`}
       key={cocktail.id}
-      className="{`mx-10 flex h-72 flex-col items-center justify-between rounded-xl bg-serria-300 bg-opacity-10 p-4 sm:-mx-2 sm:h-96 sm:w-64"
+      className="mx-10 flex h-72 flex-col items-center justify-between rounded-xl bg-serria-300 bg-opacity-10 p-4 sm:-mx-2 sm:h-96 sm:w-64"
     >
       <Image
         src={"/cocktail2.jpg"}
@@ -31,7 +33,7 @@ const CocktailCard = ({ dataUrl }) => {
         {cocktail.ingredients.join(", ")}
       </p>
       <p className="text-center text-xs sm:text-sm">{cocktail.taste}</p>
-    </div>
+    </Link>
   ));
 };
 
