@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
         className={`${roboto.className} bg-gradient-to-r from-metal-400 to-black`}
       >
         <Header />
-        {children}
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
 // Fonction fetchData pour récupérer des données depuis l'API
-const fetchData = async (path) => {
+export const fetchData = async (path) => {
   const response = await fetch(`${apiUrl}${path}`);
   if (!response.ok) {
     throw new Error(`Erreur HTTP! Statut: ${response.status}`);
@@ -13,7 +13,7 @@ const fetchData = async (path) => {
 
 // Hook personnalisé useFetchData pour encapsuler la logique de récupération des données
 const useFetchData = (dataUrl) => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState([{}]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
