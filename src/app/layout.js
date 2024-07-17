@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr">
       <body
-        className={`${roboto.className} bg-gradient-to-r from-metal-400 to-black`}
+        className={`${roboto.className} bg-gradient-to-r from-metal-400 to-black text-gray-100`}
       >
         <Header />
         <main>{children}</main>

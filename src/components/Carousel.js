@@ -32,7 +32,7 @@ const Carousel = ({ dataUrl }) => {
   }
 
   return (
-    <div className="relative flex items-center justify-center text-metal-950 sm:py-16">
+    <div className="relative flex items-center justify-center  sm:py-16">
       <button
         aria-label="recette precedente"
         className="absolute left-0 z-20"

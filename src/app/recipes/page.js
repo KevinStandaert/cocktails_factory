@@ -1,7 +1,7 @@
 import React from "react";
 import CocktailCard from "../../components/CocktailCard";
 
-const recipes = () => {
+const Recipes = () => {
   const dataUrl = "/recipes/cards";
 
   return (
@@ -18,4 +18,4 @@ const recipes = () => {
   );
 };
 
-export default recipes;
+export default Recipes;
