@@ -35,11 +35,11 @@ const RecipesIdPage = ({ params: { id } }) => {
 
         <div className="grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:grid-rows-4 lg:gap-20">
           {/*first card*/}
-          <div className="h-[500px] max-h-[600px] rounded-xl bg-[url('/cocktail1.jpg')] bg-cover bg-center md:h-[600px]"></div>
+          <div className="h-[500px] max-h-[700px] rounded-xl bg-[url('/cocktail1.jpg')] bg-cover bg-center md:h-[700px]"></div>
           {/*second card*/}
-          <div className="h-[500px] max-h-[600px] rounded-xl bg-serria-300 bg-opacity-10 lg:h-[600px]">
+          <div className="h-[500px] max-h-[700px] rounded-xl bg-serria-300 bg-opacity-10 lg:h-[700px]">
             <div className="flex h-full flex-col items-start justify-between px-4 py-6 sm:text-xl">
-              <div className="ml-2 flex items-center sm:ml-8">
+              <div className="ml-2 flex items-baseline sm:ml-8">
                 <h2 className="mr-2 font-bold">
                   <FontAwesomeIcon
                     className="mr-4 text-2xl text-serria-500"
@@ -47,10 +47,10 @@ const RecipesIdPage = ({ params: { id } }) => {
                   />
                   Goût:
                 </h2>
-                <p>{cocktail.taste_type}</p>
+                <p className="ml-2">{cocktail.taste_type}</p>
               </div>
 
-              <div className="ml-2 flex items-center sm:ml-8">
+              <div className="ml-2 flex items-baseline sm:ml-8">
                 <h2 className="mr-2 font-bold">
                   <FontAwesomeIcon
                     className="mr-4 text-2xl text-serria-500"
@@ -61,7 +61,7 @@ const RecipesIdPage = ({ params: { id } }) => {
                 <p>{cocktail.glass_name}</p>
               </div>
 
-              <div className="ml-2 flex items-center sm:ml-8">
+              <div className="ml-2 flex items-baseline sm:ml-8">
                 <h2 className="mr-2 font-bold">
                   <FontAwesomeIcon
                     className="mr-4 text-2xl text-serria-500"
@@ -72,7 +72,7 @@ const RecipesIdPage = ({ params: { id } }) => {
                 <p>{cocktail.method_name}</p>
               </div>
 
-              <div className="ml-2 flex flex-col items-start sm:ml-8 sm:flex-row sm:items-center">
+              <div className="ml-2 flex flex-col flex-wrap items-start sm:ml-8 sm:flex-row sm:items-center">
                 <h2 className="mb-2 mr-2 font-bold sm:mb-0">
                   <FontAwesomeIcon
                     className="mr-4 text-2xl text-serria-500"
@@ -105,11 +105,12 @@ const RecipesIdPage = ({ params: { id } }) => {
             </div>
           </div>
           {/*third card*/}
-          <div className="h-[500px] max-h-[600px] rounded-xl bg-serria-300 bg-opacity-10 lg:h-[600px]">
-            <h2 className="-mb-8 mt-8 self-center text-xl font-bold text-serria-500 sm:text-2xl">
-              Préparation du cocktail
+          <div className="h-[500px] max-h-[700px] rounded-xl bg-serria-300 bg-opacity-10 lg:h-[700px]">
+            <h2 className="-mb-8 mt-4 self-center text-xl font-bold sm:-mb-2 sm:text-2xl lg:-mb-8 lg:mt-8">
+              <strong className="text-serria-500">Préparation </strong>du
+              cocktail {cocktail.name}
             </h2>
-            <div className="flex h-full flex-col items-start justify-evenly p-4 sm:p-6 sm:text-xl">
+            <div className="flex h-full flex-col items-start justify-evenly p-4 sm:text-xl lg:p-6">
               <ul className="list list-inside list-disc text-justify text-xs sm:text-base">
                 <li className="mb-2 sm:mb-6">{cocktail.step_1}</li>
                 <li className="mb-2 sm:mb-6">{cocktail.step_2}</li>
@@ -121,20 +122,30 @@ const RecipesIdPage = ({ params: { id } }) => {
             </div>
           </div>
           {/*fourth card*/}
-          <div className="h-[500px] max-h-[600px] rounded-xl bg-serria-300 bg-opacity-10 lg:h-[600px]">
-            <h2 className="-mb-8 mt-8 self-center text-xl font-bold text-serria-500 sm:text-2xl">
-              Les conseils du pro
+          <div className="h-[500px] max-h-[700px] rounded-xl bg-serria-300 bg-opacity-10 lg:h-[700px]">
+            <h2 className="mt-4 self-center text-xl font-bold sm:text-2xl lg:-mb-8 lg:mt-8">
+              <strong className="text-serria-500">Les conseils</strong> du pro
             </h2>
             <div className="flex h-full flex-col items-center justify-center p-4 sm:p-6 sm:text-xl">
-              <p className="text-justify text-xs sm:text-base">
+              <p className="text-justify text-base lg:text-xl">
                 {cocktail.advice}
               </p>
             </div>
           </div>
           {/*fifth card*/}
-          <div className="h-[300px] bg-indigo-500 lg:col-span-2 lg:h-[450px]"></div>
+          <div className="h-[500px] rounded-xl bg-serria-300 bg-opacity-10 lg:col-span-2 lg:h-[550px]">
+            <div className="flex h-full flex-col items-center p-4 sm:items-start sm:p-6 sm:text-xl">
+              <h2 className="my-4 text-xl font-bold sm:text-2xl lg:my-8">
+                <strong className="text-serria-500">Historique </strong>du{" "}
+                {cocktail.name}
+              </h2>
+              <p className="text-justify text-base lg:text-xl">
+                {cocktail.history}
+              </p>
+            </div>
+          </div>
           {/*sixth card*/}
-          <div className="h-[300px] bg-pink-500 lg:col-span-2 lg:h-[450px]"></div>
+          <div className="h-[500px] bg-pink-500 lg:col-span-2 lg:h-[550px]"></div>
         </div>
       </div>
     </div>
