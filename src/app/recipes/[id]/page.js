@@ -27,7 +27,7 @@ const RecipesIdPage = ({ params: { id } }) => {
   }
 
   return (
-    <div className="container mx-auto p-6">
+    <div className="container mx-auto mt-8 rounded-xl bg-serria-300 bg-opacity-10 p-6">
       <div className="w-full text-center">
         <h1 className="mb-20 mt-10 text-center text-4xl font-bold sm:mb-36 md:text-6xl lg:mt-24">
           {cocktail.name}
