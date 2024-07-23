@@ -105,7 +105,7 @@ const RecipesIdPage = ({ params: { id } }) => {
                   ))}
                 </ul>
               </div>
-              <p className="text-justify text-sm md:text-xl text-serria-500">
+              <p className="text-justify overflow-y-auto text-sm md:text-xl text-serria-500">
                 {cocktail.description}
               </p>
             </div>
@@ -133,7 +133,7 @@ const RecipesIdPage = ({ params: { id } }) => {
               <strong className="text-serria-500">Les conseils</strong> du pro
             </h2>
             <div className="flex h-full flex-col items-center justify-center p-4 sm:p-6 sm:text-xl">
-              <p className="text-justify text-base lg:text-xl">
+              <p className="text-justify text-sm lg:text-xl">
                 {cocktail.advice}
               </p>
             </div>
@@ -145,7 +145,7 @@ const RecipesIdPage = ({ params: { id } }) => {
                 <strong className="text-serria-500">Historique </strong>du{" "}
                 {cocktail.name}
               </h2>
-              <p className="text-justify text-base lg:text-xl">
+              <p className="text-justify text-sm lg:text-xl">
                 {cocktail.history}
               </p>
             </div>
