@@ -82,7 +82,7 @@ const Carousel = ({ dataUrl }) => {
                 className={`mx-10 flex h-72 flex-col items-center justify-between rounded-xl bg-serria-300 bg-opacity-10 p-4 sm:-mx-2 sm:h-96 sm:w-64 ${scale} ${blur}`}
               >
                 <Image
-                  src={"/cocktail1.jpg"}
+                  src={`/${cocktail.url_image}`}
                   alt={cocktail.name}
                   width={250}
                   height={200}

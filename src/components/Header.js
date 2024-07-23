@@ -28,6 +28,7 @@ const Header = () => {
         <Image
           className="-mb-3 -mt-3 h-auto w-40"
           src="/logo-rbg.webp"
+          priority
           width={180}
           height={100}
           alt="Cocktails Factory logo"

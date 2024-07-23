@@ -15,6 +15,7 @@ export const dynamic = "force-static";
 
 const RecipesIdPage = ({ params: { id } }) => {
   const { data: cocktail, loading, error } = useFetchData(`/recipes/${id}`);
+  const backgroundImage = `url(/${cocktail.url_image})`;
 
   if (loading) {
     return <div className="mt-24 text-xl">Chargement...</div>;
@@ -33,12 +34,15 @@ const RecipesIdPage = ({ params: { id } }) => {
           {cocktail.name}
         </h1>
 
-        <div className="grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:grid-rows-4 lg:gap-20">
+        <div className="grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:grid-rows-3 lg:gap-20">
           {/*first card*/}
-          <div className="h-[500px] max-h-[700px] rounded-xl bg-[url('/cocktail1.jpg')] bg-cover bg-center md:h-[700px]"></div>
+          <div
+            className="h-[500px] max-h-[700px] rounded-xl bg-cover bg-center md:h-[700px]"
+            style={{ backgroundImage }}
+          ></div>
           {/*second card*/}
           <div className="h-[500px] max-h-[700px] rounded-xl bg-serria-300 bg-opacity-10 lg:h-[700px]">
-            <div className="flex h-full flex-col items-start justify-between px-4 py-6 sm:text-xl">
+            <div className="flex h-full flex-col gap-1 items-start justify-between px-4 py-6 sm:text-xl">
               <div className="ml-2 flex items-baseline sm:ml-8">
                 <h2 className="mr-2 font-bold">
                   <FontAwesomeIcon
@@ -80,28 +84,30 @@ const RecipesIdPage = ({ params: { id } }) => {
                   />
                   Ustensils:
                 </h2>
-                <ul className="flex">
-                  <li className="flex">{cocktail.ustensil_name.join(", ")}</li>
+                <ul className="flex md:mt-2">
+                  <li className="flex text-left">{cocktail.ustensil_name.join(", ")}</li>
                 </ul>
               </div>
 
-              <div className="ml-2 sm:ml-8">
-                <h2 className="mr-2 font-bold">
+              <div className="flex flex-col ml-2 sm:ml-8">
+                <h2 className="mr-2 flex font-bold">
                   <FontAwesomeIcon
                     className="mr-4 text-2xl text-serria-500"
                     icon={faWineBottle}
                   />
                   Ingrédients:
                 </h2>
-                <ul className="flex flex-col">
-                  {cocktail.ingredients.map((ingredient) => (
-                    <li className="flex" key={ingredient.id}>
+                <ul className="md:mt-2">
+                  {cocktail.ingredients.map((ingredient, index) => (
+                    <li className="flex" key={ingredient.id || index}>
                       {ingredient.quantity} ml {ingredient.name}
                     </li>
                   ))}
                 </ul>
               </div>
-              <p className="text-serria-500">{cocktail.description}</p>
+              <p className="text-justify text-sm md:text-xl text-serria-500">
+                {cocktail.description}
+              </p>
             </div>
           </div>
           {/*third card*/}
@@ -145,7 +151,7 @@ const RecipesIdPage = ({ params: { id } }) => {
             </div>
           </div>
           {/*sixth card*/}
-          <div className="h-[500px] bg-pink-500 lg:col-span-2 lg:h-[550px]"></div>
+          {/* <div className="h-[500px] bg-pink-500 lg:col-span-2 lg:h-[550px]"></div> */}
         </div>
       </div>
     </div>
