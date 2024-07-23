@@ -129,7 +129,7 @@ const RecipesIdPage = ({ params: { id } }) => {
           </div>
           {/*fourth card*/}
           <div className="h-[500px] max-h-[700px] rounded-xl bg-serria-300 bg-opacity-10 lg:h-[700px]">
-            <h2 className="mt-4 self-center text-xl font-bold sm:text-2xl lg:-mb-8 lg:mt-8">
+            <h2 className="mt-6 self-center text-xl font-bold sm:text-2xl lg:-mb-8 lg:mt-8">
               <strong className="text-serria-500">Les conseils</strong> du pro
             </h2>
             <div className="flex h-full flex-col items-center justify-center p-4 sm:p-6 sm:text-xl">
@@ -140,11 +140,12 @@ const RecipesIdPage = ({ params: { id } }) => {
           </div>
           {/*fifth card*/}
           <div className="h-[500px] rounded-xl bg-serria-300 bg-opacity-10 lg:col-span-2 lg:h-[550px]">
-            <div className="flex h-full flex-col items-center p-4 sm:items-start sm:p-6 sm:text-xl">
-              <h2 className="my-4 text-xl font-bold sm:text-2xl lg:my-8">
+          <h2 className="mt-6 self-center text-xl font-bold sm:text-2xl lg:-mb-8 lg:mt-8">
                 <strong className="text-serria-500">Historique </strong>du{" "}
                 {cocktail.name}
               </h2>
+            <div className="flex h-full flex-col items-center justify-center p-4 sm:p-6 sm:text-xl">
+             
               <p className="text-justify text-sm lg:text-xl">
                 {cocktail.history}
               </p>
