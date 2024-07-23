@@ -76,7 +76,7 @@ const RecipesIdPage = ({ params: { id } }) => {
                 <p>{cocktail.method_name}</p>
               </div>
 
-              <div className="ml-2 flex flex-col flex-wrap items-start sm:ml-8 sm:flex-row sm:items-center">
+              <div className="ml-2 flex flex-col flex-wrap items-start sm:ml-8 sm:flex-row sm:items-baseline">
                 <h2 className="mb-2 mr-2 font-bold sm:mb-0">
                   <FontAwesomeIcon
                     className="mr-4 text-2xl text-serria-500"
