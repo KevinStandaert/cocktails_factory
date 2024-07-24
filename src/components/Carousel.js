@@ -88,7 +88,7 @@ const Carousel = ({ dataUrl }) => {
                   height={200}
                   className="h-36 w-auto rounded-xl sm:h-48"
                 />
-                <h2 className="font-bold text-serria-500 sm:text-2xl">
+                <h2 className="font-bold text-serria-500 text-center sm:text-2xl">
                   {cocktail.name}
                 </h2>
                 <p className="text-center text-xs sm:text-sm">

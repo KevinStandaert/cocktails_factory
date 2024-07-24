@@ -37,12 +37,12 @@ const RecipesIdPage = ({ params: { id } }) => {
         <div className="grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:grid-rows-3 lg:gap-20">
           {/*first card*/}
           <div
-            className="h-[500px] max-h-[700px] w-80 md:w-96  m-auto rounded-xl bg-cover bg-center lg:h-[700px]"
+            className="m-auto h-[500px] max-h-[700px] shadow-black  shadow-xl w-80 rounded-xl bg-cover bg-center md:w-96 lg:h-[700px]"
             style={{ backgroundImage }}
           ></div>
           {/*second card*/}
           <div className="h-[500px] max-h-[700px] rounded-xl bg-serria-300 bg-opacity-10 lg:h-[700px]">
-            <div className="flex h-full flex-col gap-1 items-start justify-between px-4 py-6 sm:text-xl">
+            <div className="flex h-full flex-col items-start justify-between gap-1 px-4 py-6 sm:text-xl">
               <div className="ml-2 flex items-baseline sm:ml-8">
                 <h2 className="mr-2 font-bold">
                   <FontAwesomeIcon
@@ -54,7 +54,7 @@ const RecipesIdPage = ({ params: { id } }) => {
                 <p className="ml-2">{cocktail.taste_type}</p>
               </div>
 
-              <div className="ml-2 flex items-baseline sm:ml-8">
+              <div className="ml-2 mt-2 flex items-baseline sm:ml-8">
                 <h2 className="mr-2 font-bold">
                   <FontAwesomeIcon
                     className="mr-4 text-2xl text-serria-500"
@@ -65,7 +65,7 @@ const RecipesIdPage = ({ params: { id } }) => {
                 <p>{cocktail.glass_name}</p>
               </div>
 
-              <div className="ml-2 flex items-baseline sm:ml-8">
+              <div className="ml-2 mt-2 flex items-baseline sm:ml-8">
                 <h2 className="mr-2 font-bold">
                   <FontAwesomeIcon
                     className="mr-4 text-2xl text-serria-500"
@@ -85,11 +85,13 @@ const RecipesIdPage = ({ params: { id } }) => {
                   Ustensils:
                 </h2>
                 <ul className="flex md:mt-2">
-                  <li className="flex text-left">{cocktail.ustensil_name.join(", ")}</li>
+                  <li className="flex text-left">
+                    {cocktail.ustensil_name.join(", ")}
+                  </li>
                 </ul>
               </div>
 
-              <div className="flex flex-col ml-2 sm:ml-8">
+              <div className="ml-2 mt-2 flex flex-col sm:ml-8">
                 <h2 className="mr-2 flex font-bold">
                   <FontAwesomeIcon
                     className="mr-4 text-2xl text-serria-500"
@@ -100,19 +102,19 @@ const RecipesIdPage = ({ params: { id } }) => {
                 <ul className="md:mt-2">
                   {cocktail.ingredients.map((ingredient, index) => (
                     <li className="flex" key={ingredient.id || index}>
-                      {ingredient.quantity} ml {ingredient.name}
+                      {ingredient.quantity} {ingredient.unit} {ingredient.name}
                     </li>
                   ))}
                 </ul>
               </div>
-              <p className="text-justify overflow-y-auto text-sm md:text-xl text-serria-500">
+              <p className="overflow-y-auto text-justify p-2 md:p-4 text-sm text-serria-500 md:text-xl">
                 {cocktail.description}
               </p>
             </div>
           </div>
           {/*third card*/}
-          <div className="h-[500px] max-h-[700px] rounded-xl bg-serria-300 bg-opacity-10 lg:h-[700px]">
-            <h2 className="-mb-8 mt-4 self-center text-xl font-bold sm:-mb-2 sm:text-2xl lg:-mb-8 lg:mt-8">
+          <div className="h-[500px] max-h-[700px] px-2 rounded-xl bg-serria-300 bg-opacity-10 lg:h-[700px]">
+            <h2 className="-mb-8 mt-4 self-center text-xl font-bold sm:-mb-2 sm:text-3xl lg:-mb-8 lg:mt-8">
               <strong className="text-serria-500">Préparation </strong>du
               cocktail {cocktail.name}
             </h2>
@@ -129,24 +131,23 @@ const RecipesIdPage = ({ params: { id } }) => {
           </div>
           {/*fourth card*/}
           <div className="h-[500px] max-h-[700px] rounded-xl bg-serria-300 bg-opacity-10 lg:h-[700px]">
-            <h2 className="mt-6 self-center text-xl font-bold sm:text-2xl lg:-mb-8 lg:mt-8">
+            <h2 className="mt-6 self-center text-xl font-bold sm:text-3xl lg:-mb-8 lg:mt-8">
               <strong className="text-serria-500">Les conseils</strong> du pro
             </h2>
             <div className="flex h-full flex-col items-center justify-center p-4 sm:p-6 sm:text-xl">
-              <p className="text-justify text-sm lg:text-xl p-16">
+              <p className="md:px-16 -mt-8  px-4 text-justify text-sm lg:text-xl">
                 {cocktail.advice}
               </p>
             </div>
           </div>
           {/*fifth card*/}
           <div className="h-[500px] rounded-xl bg-serria-300 bg-opacity-10 lg:col-span-2 lg:h-[550px]">
-          <h2 className="mt-6 self-center text-xl font-bold sm:text-2xl lg:-mb-8 lg:mt-8">
-                <strong className="text-serria-500">Historique </strong>du{" "}
-                {cocktail.name}
-              </h2>
+            <h2 className="mt-6 self-center text-xl font-bold sm:text-3xl lg:-mb-8 lg:mt-8">
+              <strong className="text-serria-500">Historique </strong>du{" "}
+              {cocktail.name}
+            </h2>
             <div className="flex h-full flex-col items-center justify-center p-4 sm:p-6 sm:text-xl">
-             
-              <p className="text-justify text-sm lg:text-xl p-16">
+              <p className="md:px-16 px-4 text-justify mb-8 -mt-8 text-sm lg:text-xl">
                 {cocktail.history}
               </p>
             </div>
