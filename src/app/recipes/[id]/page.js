@@ -37,7 +37,7 @@ const RecipesIdPage = ({ params: { id } }) => {
         <div className="grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:grid-rows-3 lg:gap-20">
           {/*first card*/}
           <div
-            className="h-[500px] max-h-[700px] rounded-xl bg-cover bg-center md:h-[700px]"
+            className="h-[500px] max-h-[700px] w-80 md:w-96  m-auto rounded-xl bg-cover bg-center lg:h-[700px]"
             style={{ backgroundImage }}
           ></div>
           {/*second card*/}
@@ -133,7 +133,7 @@ const RecipesIdPage = ({ params: { id } }) => {
               <strong className="text-serria-500">Les conseils</strong> du pro
             </h2>
             <div className="flex h-full flex-col items-center justify-center p-4 sm:p-6 sm:text-xl">
-              <p className="text-justify text-sm lg:text-xl">
+              <p className="text-justify text-sm lg:text-xl p-16">
                 {cocktail.advice}
               </p>
             </div>
@@ -146,7 +146,7 @@ const RecipesIdPage = ({ params: { id } }) => {
               </h2>
             <div className="flex h-full flex-col items-center justify-center p-4 sm:p-6 sm:text-xl">
              
-              <p className="text-justify text-sm lg:text-xl">
+              <p className="text-justify text-sm lg:text-xl p-16">
                 {cocktail.history}
               </p>
             </div>
