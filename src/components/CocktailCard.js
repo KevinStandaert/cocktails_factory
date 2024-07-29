@@ -26,10 +26,10 @@ const CocktailCard = ({ dataUrl }) => {
         alt={cocktail.name}
         width={250}
         height={200}
-        className="mt-6 h-40 w-auto rounded-xl shadow-xl shadow-black sm:h-52"
+        className="mt-6 h-40 w-auto rounded-xl mb-6 shadow-xl shadow-black sm:h-52"
       />
       <h2 className="font-bold text-serria-500 sm:text-2xl">{cocktail.name}</h2>
-      <div className="relative my-2 flex h-auto w-full items-center justify-center">
+      <div className="relative my-2 flex h-full w-full items-center justify-center">
         <p className="text-center text-xs sm:text-sm">
           {cocktail.ingredients.join(", ")}
         </p>
