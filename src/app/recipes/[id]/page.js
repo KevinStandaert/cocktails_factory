@@ -41,7 +41,7 @@ const RecipesIdPage = ({ params: { id } }) => {
             style={{ backgroundImage }}
           ></div>
           {/*second card*/}
-          <div className="h-[500px] max-h-[700px] rounded-xl  bg-serria-300 bg-opacity-10 lg:h-[700px]">
+          <div className="h-[500px] max-h-[700px] rounded-xl bg-serria-300 bg-opacity-10 lg:h-[700px]">
             <div className="flex h-full flex-col items-start justify-between gap-1 px-4 py-6 sm:text-xl">
               <div className="ml-2 flex items-baseline sm:ml-8">
                 <h2 className="mr-2 font-bold">
@@ -113,13 +113,13 @@ const RecipesIdPage = ({ params: { id } }) => {
             </div>
           </div>
           {/*third card*/}
-          <div className="h-[500px] max-h-[700px] rounded-xl overflow-hidden bg-serria-300 bg-opacity-10 px-2 lg:h-[700px]">
+          <div className="h-[500px] max-h-[700px] overflow-hidden rounded-xl bg-serria-300 bg-opacity-10 px-2 lg:h-[700px]">
             <h2 className="-mb-8 mt-4 self-center text-xl font-bold sm:text-3xl lg:-mb-8 lg:mt-8">
               <strong className="text-serria-500">Préparation </strong>du
               cocktail {cocktail.name}
             </h2>
-            <div className="flex h-full flex-col items-start justify-center p-4 over  lg:p-6">
-              <ul className="list list-inside list-disc text-justify text-xs overflow-y-auto md:text-base lg:text-xl">
+            <div className="over flex h-full flex-col items-start justify-center p-4 lg:p-6">
+              <ul className="list list-inside list-disc overflow-y-auto text-justify text-xs md:text-base lg:text-xl">
                 <li className="mb-2 lg:mb-6">{cocktail.step_1}</li>
                 <li className="mb-2 lg:mb-6">{cocktail.step_2}</li>
                 <li className="mb-2 lg:mb-6">{cocktail.step_3}</li>
@@ -142,12 +142,12 @@ const RecipesIdPage = ({ params: { id } }) => {
           </div>
           {/*fifth card*/}
           <div className="h-[500px] rounded-xl bg-serria-300 bg-opacity-10 lg:col-span-2 lg:h-[550px]">
-            <h2 className="mt-6 self-center text-xl font-bold px-2 sm:text-3xl lg:-mb-8 lg:mt-8">
+            <h2 className="mt-6 self-center px-2 text-xl font-bold sm:text-3xl lg:-mb-8 lg:mt-8">
               <strong className="text-serria-500">Historique </strong>du{" "}
               {cocktail.name}
             </h2>
             <div className="flex h-full flex-col items-center justify-center p-4 sm:p-6 sm:text-xl">
-              <p className="-mt-8 mb-8 px-4 text-justify sm:text-base text-sm md:px-16 lg:text-xl">
+              <p className="-mt-8 mb-8 px-4 text-justify text-sm sm:text-base md:px-16 lg:text-xl">
                 {cocktail.history}
               </p>
             </div>
