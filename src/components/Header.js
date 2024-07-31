@@ -76,7 +76,7 @@ const Header = () => {
               </Link>
             </li>
             <li onClick={handleLinkClick}>
-              <Link className="flex items-center" href="/">
+              <Link className="flex items-center" href="/articles">
                 <FontAwesomeIcon
                   className="mr-2 w-8 text-serria-500"
                   icon={faWandMagicSparkles}
@@ -110,18 +110,18 @@ const Header = () => {
                 className="mr-2 w-8 text-serria-500"
                 icon={faMartiniGlass}
               />
-              <strong className="transition-all py-6 hover:scale-105 hover:text-serria-500 active:text-serria-700">
+              <strong className="py-6 transition-all hover:scale-105 hover:text-serria-500 active:text-serria-700">
                 Recettes de cocktails
               </strong>
             </Link>
           </li>
           <li>
-            <Link className="flex items-center" href="/">
+            <Link className="flex items-center" href="/articles">
               <FontAwesomeIcon
                 className="mr-2 w-8 text-serria-500"
                 icon={faWandMagicSparkles}
               />
-              <strong className="transition-all py-6 hover:scale-105 hover:text-serria-500 active:text-serria-700">
+              <strong className="py-6 transition-all hover:scale-105 hover:text-serria-500 active:text-serria-700">
                 L&apos;art du cocktail
               </strong>
             </Link>
@@ -132,7 +132,7 @@ const Header = () => {
                 className="mr-2 w-8 text-serria-500"
                 icon={faShop}
               />
-              <strong className="transition-all py-6 hover:scale-105 hover:text-serria-500 active:text-serria-700">
+              <strong className="py-6 transition-all hover:scale-105 hover:text-serria-500 active:text-serria-700">
                 Où acheter ?
               </strong>
             </Link>

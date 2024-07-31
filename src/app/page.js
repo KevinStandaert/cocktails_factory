@@ -48,7 +48,7 @@ export default function Home() {
           <li>
             <Link
               className="py-6 font-bold text-serria-500 transition-all hover:text-serria-400 active:text-serria-800"
-              href="/"
+              href="/articles"
             >
               Guides et Astuces
             </Link>
