@@ -113,13 +113,15 @@ const RecipesIdPage = ({ params: { id } }) => {
             </div>
           </div>
           {/*third card*/}
-          <div className="h-[550px] max-h-[700px] rounded-xl bg-serria-300 bg-opacity-10 px-2 md:h-[700px]">
-            <h2 className="-mb-8 mt-4 self-center text-xl font-bold sm:text-3xl lg:-mb-8 lg:mt-8">
-              <strong className="text-serria-500">Préparation </strong>du
-              cocktail {cocktail.name}
-            </h2>
-            <div className="flex h-full flex-col items-start justify-center p-4 lg:p-6">
-              <ul className="list list-inside list-disc overflow-y-auto text-justify text-xs md:text-base lg:text-xl">
+          <div className="flex h-[550px] max-h-[700px] flex-col items-center rounded-xl bg-serria-300 bg-opacity-10 px-2 md:h-[700px]">
+            <div className="mb-6 mt-8 flex text-center text-xl font-bold sm:text-3xl">
+              <h2>
+                <strong className="text-serria-500">Préparation </strong>du
+                cocktail {cocktail.name}
+              </h2>
+            </div>
+            <div className="flex h-[85%] flex-col items-start justify-center p-4 lg:p-6">
+              <ul className="list-inside list-disc mb-8 overflow-y-auto p-2 text-justify text-sm sm:text-base md:p-4 lg:text-xl">
                 <li className="mb-2 lg:mb-6">{cocktail.step_1}</li>
                 <li className="mb-2 lg:mb-6">{cocktail.step_2}</li>
                 <li className="mb-2 lg:mb-6">{cocktail.step_3}</li>
