@@ -37,11 +37,11 @@ const RecipesIdPage = ({ params: { id } }) => {
         <div className="grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:grid-rows-3 lg:gap-20">
           {/*first card*/}
           <div
-            className="m-auto h-[500px] max-h-[700px] w-full rounded-xl bg-cover bg-center shadow-xl shadow-black lg:h-[700px]"
+            className="h-[550px] max-h-[700px] w-full rounded-xl bg-cover bg-center shadow-xl shadow-black md:h-[700px]"
             style={{ backgroundImage }}
           ></div>
           {/*second card*/}
-          <div className="h-[500px] max-h-[700px] rounded-xl bg-serria-300 bg-opacity-10 lg:h-[700px]">
+          <div className="h-[550px] max-h-[700px] rounded-xl bg-serria-300 bg-opacity-10 md:h-[700px]">
             <div className="flex h-full flex-col items-start justify-between gap-1 px-4 py-6 sm:text-xl">
               <div className="ml-2 flex items-baseline sm:ml-8">
                 <h2 className="mr-2 font-bold">
@@ -113,12 +113,12 @@ const RecipesIdPage = ({ params: { id } }) => {
             </div>
           </div>
           {/*third card*/}
-          <div className="h-[500px] max-h-[700px] overflow-hidden rounded-xl bg-serria-300 bg-opacity-10 px-2 lg:h-[700px]">
+          <div className="h-[550px] max-h-[700px] rounded-xl bg-serria-300 bg-opacity-10 px-2 md:h-[700px]">
             <h2 className="-mb-8 mt-4 self-center text-xl font-bold sm:text-3xl lg:-mb-8 lg:mt-8">
               <strong className="text-serria-500">Préparation </strong>du
               cocktail {cocktail.name}
             </h2>
-            <div className="over flex h-full flex-col items-start justify-center p-4 lg:p-6">
+            <div className="flex h-full flex-col items-start justify-center p-4 lg:p-6">
               <ul className="list list-inside list-disc overflow-y-auto text-justify text-xs md:text-base lg:text-xl">
                 <li className="mb-2 lg:mb-6">{cocktail.step_1}</li>
                 <li className="mb-2 lg:mb-6">{cocktail.step_2}</li>
@@ -130,24 +130,29 @@ const RecipesIdPage = ({ params: { id } }) => {
             </div>
           </div>
           {/*fourth card*/}
-          <div className="h-[500px] max-h-[700px] rounded-xl bg-serria-300 bg-opacity-10 lg:h-[700px]">
-            <h2 className="mt-6 self-center text-xl font-bold sm:text-3xl lg:-mb-8 lg:mt-8">
-              <strong className="text-serria-500">Les conseils</strong> du pro
+          <div className="flex h-[550px] max-h-[700px] flex-col items-center rounded-xl bg-serria-300 bg-opacity-10 px-2 md:h-[700px]">
+            <h2 className="mb-6 mt-8 flex text-xl font-bold sm:text-3xl">
+              <strong className="text-serria-500">Les conseils</strong>&nbsp;du
+              pro
             </h2>
-            <div className="flex h-full flex-col items-center justify-center p-4 sm:p-6 sm:text-xl">
-              <p className="-mt-8 px-4 text-justify text-sm sm:text-base lg:px-8 lg:text-xl">
+
+            <div className="flex h-[85%] flex-col items-start justify-center px-2">
+              <p className="mb-8 overflow-y-auto p-2 text-justify text-sm sm:text-base md:p-4 lg:text-xl">
                 {cocktail.advice}
               </p>
             </div>
           </div>
           {/*fifth card*/}
-          <div className="h-[500px] rounded-xl bg-serria-300 bg-opacity-10 lg:col-span-2 lg:h-[550px]">
-            <h2 className="mt-6 self-center px-2 text-xl font-bold sm:text-3xl lg:-mb-8 lg:mt-8">
-              <strong className="text-serria-500">Historique </strong>du{" "}
-              {cocktail.name}
-            </h2>
-            <div className="flex h-full flex-col items-center justify-center p-4 sm:p-6 sm:text-xl">
-              <p className="-mt-8 mb-8 px-4 text-justify text-sm sm:text-base md:px-16 lg:text-xl">
+          <div className="flex h-[550px] max-h-[550px] flex-col items-center rounded-xl bg-serria-300 bg-opacity-10 px-2 lg:col-span-2">
+            <div className="mb-6 mt-8 flex text-center text-xl font-bold sm:text-3xl">
+              <h2>
+                <strong className="text-serria-500">Historique</strong>
+                &nbsp;du&nbsp;
+                {cocktail.name}
+              </h2>
+            </div>
+            <div className="flex h-[85%] flex-col items-start justify-center px-2">
+              <p className="mb-14 overflow-y-auto p-2 text-justify text-sm sm:text-base md:p-4 lg:text-xl">
                 {cocktail.history}
               </p>
             </div>
