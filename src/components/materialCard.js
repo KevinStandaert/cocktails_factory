@@ -17,7 +17,7 @@ const MaterialCard = ({ dataUrl }) => {
 
   return materials.map((material) => (
     <Link
-      href={`/materials/${material.id}`}
+      href={`/articles/materials/${material.id}`}
       key={material.id}
       className="mx-10 flex h-[300px] w-72 flex-col items-center justify-center rounded-xl bg-serria-300 bg-opacity-10 p-1 sm:-mx-2 sm:w-64"
     >
