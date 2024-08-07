@@ -2,6 +2,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "../components/Footer";
 import { Roboto_Mono } from "next/font/google";
+import AgeConfirmationModal from "../components/AgeConfirmationModal";
 
 const roboto = Roboto_Mono({ subsets: ["latin"] });
 
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
         className={`${roboto.className} bg-gradient-to-r from-metal-400 to-black text-gray-100`}
       >
         <Header />
+        <AgeConfirmationModal />
         <main>{children}</main>
         <Footer />
       </body>
