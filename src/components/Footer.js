@@ -15,7 +15,7 @@ const Footer = () => {
         
         <Link
           target="_blank"
-          className="ml-16 py-8 transition-all hover:text-serria-500 active:text-serria-700"
+          className="sm:ml-16 ml-8 py-8 transition-all hover:text-serria-500 active:text-serria-700"
           href="/legal"
         >
           Mentions légales

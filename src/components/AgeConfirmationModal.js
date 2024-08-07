@@ -31,20 +31,20 @@ const AgeConfirmationModal = () => {
       <div className="rounded-lg bg-serria-400 p-6 text-white shadow-xl shadow-black">
         <h2 className="mb-4 text-2xl">Confirmez votre âge</h2>
         <p className="mb-4">
-          You must be at least 18 years old to visit this site...
+          Vous devez avoir plus de 18 ans pour accéder au site.
         </p>
-        <div className="flex space-x-4">
+        <div className="flex justify-center space-x-4">
           <button
             onClick={handleConfirm}
-            className="rounded bg-metal-400 px-4 py-2 font-bold text-white hover:bg-metal-800 active:bg-metal-400"
+            className="rounded-lg shadow-md shadow-black bg-metal-400 px-4 py-2 font-bold text-white hover:bg-metal-800 active:bg-metal-400"
           >
-            I am 18 or older
+            Yolo !
           </button>
           <button
             onClick={handleDeny}
-            className="rounded bg-red-400 px-4 py-2 font-bold text-white hover:bg-red-800 active:bg-red-400"
+            className="rounded-lg shadow-md shadow-black bg-red-400 px-4 py-2 font-bold text-white hover:bg-red-800 active:bg-red-400"
           >
-            No
+            Je suis mineur
           </button>
         </div>
       </div>

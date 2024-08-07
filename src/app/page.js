@@ -14,7 +14,7 @@ export default function Home() {
           COC<strong className="text-serria-500">K</strong>TAIL
           <strong className="text-serria-500">S</strong> FACTORY
         </h1>
-        <h2 className="ms:mt-8 mt-6 text-xs md:px-24 md:text-lg">
+        <h2 className="ms:mt-8 mt-6 text-xs md:px-24 sm:text-lg">
           Bienvenue sur Cocktails Factory, votre destination ultime pour
           explorer et apprécier l&apos;art exquis des cocktails. Que vous soyez
           un amateur passionné ou un curieux désireux d&apos;explorer de
@@ -28,7 +28,7 @@ export default function Home() {
       </h3>
       <Carousel dataUrl={dataUrl}/>
 
-      <div className="mb-20 flex max-w-[1920px] flex-col rounded-xl bg-serria-300 bg-opacity-10 px-8 py-10 text-xs sm:py-20 md:text-lg">
+      <div className="mb-20 flex max-w-[1920px] flex-col rounded-xl bg-serria-300 bg-opacity-10 px-8 py-10 text-xs sm:py-20 sm:text-lg">
         <h3 className="mb-8 self-start text-base sm:text-3xl">
           Ce que nous vous
           <strong className="font-bold text-serria-500"> offrons</strong>
@@ -68,7 +68,7 @@ export default function Home() {
           </li>
         </ul>
       </div>
-      <div className="mb-20 flex max-w-[1920px] flex-col rounded-xl bg-serria-300 bg-opacity-10 px-8 py-10 text-xs sm:py-20 md:text-lg">
+      <div className="mb-20 flex max-w-[1920px] flex-col rounded-xl bg-serria-300 bg-opacity-10 px-8 py-10 text-xs sm:py-20 sm:text-lg">
         <h3 className="mb-8 self-start text-base sm:text-3xl">
           <strong className="font-bold text-serria-500">Pourquoi </strong> nous
           choisir ?
@@ -90,7 +90,7 @@ export default function Home() {
           </li>
         </ul>
       </div>
-      <div className="mb-20 flex max-w-[1920px] flex-col rounded-xl bg-serria-300 bg-opacity-10 px-8 py-10 text-xs sm:py-20 md:text-lg">
+      <div className="mb-20 flex max-w-[1920px] flex-col rounded-xl bg-serria-300 bg-opacity-10 px-8 py-10 text-xs sm:py-20 sm:text-lg">
         <h3 className="mb-8 self-start text-base sm:text-3xl">
           Notre
           <strong className="font-bold text-serria-500"> Engagement </strong>
