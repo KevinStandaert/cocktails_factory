@@ -2,18 +2,25 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="flex items-center justify-center mb-8 p-4 text-center text-xs sm:text-base text-white">
-      <p>
-        © 2024{" "}
+    <footer className="mb-8 flex items-center justify-center p-4 text-center text-xs text-white sm:text-base">
+      
+        {" "}
         <Link
           target="_blank"
-          className="transition-all hover:text-serria-500 py-8 active:text-serria-700"
+          className="py-8 transition-all hover:text-serria-500 active:text-serria-700"
           href="https://kevinstandaert.github.io/"
         >
-          Kévin Standaert
+          © 2024 Kévin Standaert - Tous droits réservés
         </Link>{" "}
-        - Tous droits réservés
-      </p>
+        
+        <Link
+          target="_blank"
+          className="ml-16 py-8 transition-all hover:text-serria-500 active:text-serria-700"
+          href="/legal"
+        >
+          Mentions légales
+        </Link>{" "}
+      
     </footer>
   );
 };
