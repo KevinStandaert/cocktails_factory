@@ -33,11 +33,13 @@ const ArticleIdPage = ({ params: { id } }) => {
           ></div>
 
           {/*second card*/}
-          <div className="flex h-[250px] flex-col items-center rounded-xl bg-serria-300 bg-opacity-10 px-2 md:h-[450px] lg:h-[500px] xl:h-[700px]">
-            <h2 className="mb-6 mt-8 flex text-xl font-bold sm:text-3xl">
-              <strong className="text-serria-500">Qu&apos;est-ce </strong>
-              &nbsp;que c&apos;est ?
-            </h2>
+          <div className="flex h-[250px] flex-col items-center overflow-hidden rounded-xl bg-serria-300 bg-opacity-10 px-2 md:h-[450px] lg:h-[500px] xl:h-[700px]">
+            <div className="mb-4 mt-6 flex font-bold sm:mb-6 sm:mt-8 sm:text-3xl">
+              <h2>
+                <strong className="text-serria-500">Qu&apos;est-ce</strong>
+                &nbsp;que c&apos;est ?
+              </h2>
+            </div>
 
             <div className="flex h-[85%] flex-col items-start justify-center px-2">
               <p className="mb-8 overflow-y-auto p-2 text-justify text-sm sm:text-base md:p-4 lg:text-xl">
@@ -47,11 +49,13 @@ const ArticleIdPage = ({ params: { id } }) => {
           </div>
 
           {/*third card*/}
-          <div className="flex h-[250px] flex-col items-center rounded-xl bg-serria-300 bg-opacity-10 px-2 md:h-[450px] lg:h-[500px] xl:h-[700px]">
-            <h2 className="mb-6 mt-8 flex text-xl font-bold sm:text-3xl">
-              Comment l&apos;
-              <strong className="text-serria-500">utiliser</strong>&nbsp;?
-            </h2>
+          <div className="flex h-[250px] flex-col items-center overflow-hidden rounded-xl bg-serria-300 bg-opacity-10 px-2 md:h-[450px] lg:h-[500px] xl:h-[700px]">
+            <div className="mb-4 mt-6 flex font-bold sm:mb-6 sm:mt-8 sm:text-3xl">
+              <h2>
+                Comment l&apos;
+                <strong className="text-serria-500">utiliser</strong>&nbsp;?
+              </h2>
+            </div>
 
             <div className="flex h-[85%] flex-col items-start justify-center px-2">
               <p className="mb-8 overflow-y-auto p-2 text-justify text-sm sm:text-base md:p-4 lg:text-xl">
@@ -62,7 +66,7 @@ const ArticleIdPage = ({ params: { id } }) => {
 
           {/*fourth card*/}
           <div
-            className="h-[250px] rounded-xl bg-cover bg-center shadow-xl shadow-black md:h-[450px] lg:h-[500px] xl:h-[700px]"
+            className="row-start-3 h-[250px] rounded-xl bg-cover bg-center shadow-xl shadow-black md:h-[450px] lg:h-[500px] xl:h-[700px]"
             style={{ backgroundImage: `url(/${material.url_image_2})` }}
           ></div>
 
@@ -73,11 +77,13 @@ const ArticleIdPage = ({ params: { id } }) => {
           ></div>
 
           {/*sixth card*/}
-          <div className="flex h-[250px] flex-col items-center rounded-xl bg-serria-300 bg-opacity-10 px-2 md:h-[450px] lg:h-[500px] xl:h-[700px]">
-            <h2 className="mb-6 mt-8 flex text-xl font-bold sm:text-3xl">
-              Et si j&apos;
-              <strong className="text-serria-500">en ai pas</strong>&nbsp;?
-            </h2>
+          <div className="flex h-[250px] flex-col items-center overflow-hidden rounded-xl bg-serria-300 bg-opacity-10 px-2 md:h-[450px] lg:h-[500px] xl:h-[700px]">
+            <div className="mb-4 mt-6 flex font-bold sm:mb-6 sm:mt-8 sm:text-3xl">
+              <h2>
+                Et si j&apos;
+                <strong className="text-serria-500">en ai pas</strong>&nbsp;?
+              </h2>
+            </div>
 
             <div className="flex h-[85%] flex-col items-start justify-center px-2">
               <p className="mb-8 overflow-y-auto p-2 text-justify text-sm sm:text-base md:p-4 lg:text-xl">
