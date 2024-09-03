@@ -24,6 +24,7 @@ const MaterialCard = ({ dataUrl }) => {
       <Image
         src={`/${material.url_image_1}`}
         alt={material.name}
+        priority
         width={250}
         height={200}
         className="mb-6 mt-6 h-40 w-auto rounded-xl shadow-xl shadow-black sm:h-52"

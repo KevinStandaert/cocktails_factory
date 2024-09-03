@@ -24,6 +24,7 @@ const CocktailCard = ({ dataUrl }) => {
       <Image
         src={`/${cocktail.url_image}`}
         alt={cocktail.name}
+        priority
         width={250}
         height={200}
         className="mt-6 h-40 w-auto rounded-xl mb-6 shadow-xl shadow-black sm:h-52"

@@ -38,7 +38,7 @@ const AgeConfirmationModal = () => {
             onClick={handleConfirm}
             className="rounded-lg shadow-md shadow-black bg-metal-400 px-4 py-2 font-bold text-white hover:bg-metal-800 active:bg-metal-400"
           >
-            Yolo !
+            On y va !
           </button>
           <button
             onClick={handleDeny}
