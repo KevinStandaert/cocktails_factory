@@ -1,6 +1,7 @@
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "../components/Footer";
+import Head from "next/head";
 import { Roboto_Mono } from "next/font/google";
 import AgeConfirmationModal from "../components/AgeConfirmationModal";
 
@@ -15,6 +16,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
+      <Head>
+        <meta
+          name="google-site-verification"
+          content="5eyIXp4bdeWId8K0CXzhtRb8ieAoUTajaJNvk9AKJQM"
+        />
+      </Head>
+
       <body
         className={`${roboto.className} bg-gradient-to-r from-metal-400 to-black text-gray-100`}
       >
