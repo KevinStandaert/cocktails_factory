@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://cocktails-factory.vercel.app/sitemap.xml
