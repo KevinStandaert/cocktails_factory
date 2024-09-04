@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "../components/Footer";
 import { Roboto_Mono } from "next/font/google";
 import AgeConfirmationModal from "../components/AgeConfirmationModal";
+import { Analytics } from "@vercel/analytics/react";
 
 const roboto = Roboto_Mono({ subsets: ["latin"] });
 
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
         <AgeConfirmationModal />
         <main>{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
