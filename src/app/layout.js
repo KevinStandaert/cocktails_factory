@@ -14,6 +14,20 @@ export const metadata = {
   verification: {
     google: "5eyIXp4bdeWId8K0CXzhtRb8ieAoUTajaJNvk9AKJQM",
   },
+  openGraph: {
+    type: 'website',
+    url: 'https://cocktails-factory.vercel.app',
+    title: 'Cocktails Factory - Fabrique à Cocktails',
+    description: 'Découvrez notre collection de recettes de cocktails uniques et savoureuses. Que vous soyez un amateur de cocktails classiques ou à la recherche de nouvelles créations.',
+    images: [
+      {
+        url: '/images/verbena_cocktail.webp',
+        width: 1024,
+        height: 1024,
+        alt: 'Image représentant Cocktails Factory',
+      },
+    ],
+  },
 };
 
 export default function RootLayout({ children }) {
