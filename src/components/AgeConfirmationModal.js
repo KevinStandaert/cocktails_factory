@@ -44,7 +44,7 @@ const AgeConfirmationModal = () => {
             onClick={handleDeny}
             className="rounded-lg shadow-md shadow-black bg-red-400 px-4 py-2 font-bold text-white hover:bg-red-800 active:bg-red-400"
           >
-            Je suis mineur
+            Je suis mineur(e)
           </button>
         </div>
       </div>
