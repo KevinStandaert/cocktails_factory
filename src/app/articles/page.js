@@ -19,7 +19,7 @@ const Articles = () => {
               height={200}
               className="mb-6 mt-6 h-40 w-auto rounded-xl shadow-xl shadow-black sm:h-52"
             />
-            <h2 className="font-bold text-serria-500 sm:text-2xl">Le materiels</h2>
+            <h2 className="font-bold text-serria-600 sm:text-2xl">Le materiels</h2>
             <div className="relative my-2 flex h-full items-center justify-center">
               <p className="text-pretty text-xs p-2 sm:text-sm">Toutes les informations essentielles à connaître sur les différents outils du barman.</p>
             </div>
@@ -35,7 +35,7 @@ const Articles = () => {
               height={200}
               className="mb-6 mt-6 h-40 w-auto rounded-xl shadow-xl shadow-black sm:h-52"
             />
-            <h2 className="font-bold text-serria-500 sm:text-2xl">
+            <h2 className="font-bold text-serria-600 sm:text-2xl">
               Les ingrédients
             </h2>
             <div className="relative my-2 flex h-full items-center justify-center">
@@ -53,7 +53,7 @@ const Articles = () => {
               height={200}
               className="mb-6 mt-6 h-40 w-auto rounded-xl shadow-xl shadow-black sm:h-52"
             />
-            <h2 className="font-bold text-serria-500 sm:text-2xl">
+            <h2 className="font-bold text-serria-600 sm:text-2xl">
               Les techniques
             </h2>
             <div className="relative my-2 flex h-full items-center justify-center">
