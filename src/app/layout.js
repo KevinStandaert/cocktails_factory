@@ -21,7 +21,7 @@ export const metadata = {
     description: 'Découvrez notre collection de recettes de cocktails uniques et savoureuses. Que vous soyez un amateur de cocktails classiques ou à la recherche de nouvelles créations.',
     images: [
       {
-        url: '/images/verbena_cocktail.webp',
+        url: 'https://cocktails-factory.vercel.app/logo_cocktails_factory.webp',
         width: 1024,
         height: 1024,
         alt: 'Image représentant Cocktails Factory',
