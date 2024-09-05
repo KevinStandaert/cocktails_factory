@@ -36,7 +36,7 @@ const ArticleIdPage = ({ params: { id } }) => {
           <div className="flex h-[250px] flex-col items-center overflow-hidden rounded-xl bg-serria-300 bg-opacity-10 px-2 md:h-[450px] lg:h-[500px] xl:h-[700px]">
             <div className="mb-4 mt-6 flex font-bold sm:mb-6 sm:mt-8 sm:text-3xl">
               <h2>
-                <strong className="text-serria-500">Qu&apos;est-ce</strong>
+                <strong className="text-serria-600">Qu&apos;est-ce</strong>
                 &nbsp;que c&apos;est ?
               </h2>
             </div>
@@ -53,7 +53,7 @@ const ArticleIdPage = ({ params: { id } }) => {
             <div className="mb-4 mt-6 flex font-bold sm:mb-6 sm:mt-8 sm:text-3xl">
               <h2>
                 Comment l&apos;
-                <strong className="text-serria-500">utiliser</strong>&nbsp;?
+                <strong className="text-serria-600">utiliser</strong>&nbsp;?
               </h2>
             </div>
 
@@ -81,7 +81,7 @@ const ArticleIdPage = ({ params: { id } }) => {
             <div className="mb-4 mt-6 flex font-bold sm:mb-6 sm:mt-8 sm:text-3xl">
               <h2>
                 Et si j&apos;
-                <strong className="text-serria-500">en ai pas</strong>&nbsp;?
+                <strong className="text-serria-600">en ai pas</strong>&nbsp;?
               </h2>
             </div>
 

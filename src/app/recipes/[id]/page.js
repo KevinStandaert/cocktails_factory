@@ -46,7 +46,7 @@ const RecipesIdPage = ({ params: { id } }) => {
               <div className="ml-2 flex items-baseline sm:ml-8">
                 <h2 className="mr-2 font-bold">
                   <FontAwesomeIcon
-                    className="mr-4 text-2xl text-serria-500"
+                    className="mr-4 text-2xl text-serria-600"
                     icon={faFaceGrinTongue}
                   />
                   Goût:
@@ -57,7 +57,7 @@ const RecipesIdPage = ({ params: { id } }) => {
               <div className="ml-2 mt-2 flex items-baseline sm:ml-8">
                 <h2 className="mr-2 font-bold">
                   <FontAwesomeIcon
-                    className="mr-4 text-2xl text-serria-500"
+                    className="mr-4 text-2xl text-serria-600"
                     icon={faMartiniGlass}
                   />
                   Verre:
@@ -68,7 +68,7 @@ const RecipesIdPage = ({ params: { id } }) => {
               <div className="ml-2 mt-2 flex items-baseline sm:ml-8">
                 <h2 className="mr-2 font-bold">
                   <FontAwesomeIcon
-                    className="mr-4 text-2xl text-serria-500"
+                    className="mr-4 text-2xl text-serria-600"
                     icon={faGear}
                   />
                   Méthode:
@@ -79,7 +79,7 @@ const RecipesIdPage = ({ params: { id } }) => {
               <div className="ml-2 flex flex-col flex-wrap items-start sm:ml-8 sm:flex-row sm:items-baseline">
                 <h2 className="mb-2 mr-2 font-bold sm:mb-0">
                   <FontAwesomeIcon
-                    className="mr-4 text-2xl text-serria-500"
+                    className="mr-4 text-2xl text-serria-600"
                     icon={faSpoon}
                   />
                   Ustensils:
@@ -94,7 +94,7 @@ const RecipesIdPage = ({ params: { id } }) => {
               <div className="ml-2 mt-2 flex flex-col sm:ml-8">
                 <h2 className="mr-2 flex font-bold">
                   <FontAwesomeIcon
-                    className="mr-4 text-2xl text-serria-500"
+                    className="mr-4 text-2xl text-serria-600"
                     icon={faWineBottle}
                   />
                   Ingrédients:
@@ -107,7 +107,7 @@ const RecipesIdPage = ({ params: { id } }) => {
                   ))}
                 </ul>
               </div>
-              <p className="overflow-y-auto p-2 text-justify text-sm text-serria-500 md:p-4 md:text-xl">
+              <p className="overflow-y-auto p-2 text-justify text-sm  md:p-4 md:text-xl">
                 {cocktail.description}
               </p>
             </div>
@@ -116,7 +116,7 @@ const RecipesIdPage = ({ params: { id } }) => {
           <div className="flex h-[550px] max-h-[700px] flex-col items-center rounded-xl bg-serria-300 bg-opacity-10 px-2 md:h-[700px]">
             <div className="mb-6 mt-8 flex text-center text-xl font-bold sm:text-3xl">
               <h2>
-                <strong className="text-serria-500">Préparation </strong>du
+                <strong className="text-serria-600">Préparation </strong>du
                 cocktail {cocktail.name}
               </h2>
             </div>
@@ -134,7 +134,7 @@ const RecipesIdPage = ({ params: { id } }) => {
           {/*fourth card*/}
           <div className="flex h-[550px] max-h-[700px] flex-col items-center rounded-xl bg-serria-300 bg-opacity-10 px-2 md:h-[700px]">
             <h2 className="mb-6 mt-8 flex text-xl font-bold sm:text-3xl">
-              <strong className="text-serria-500">Les conseils</strong>&nbsp;du
+              <strong className="text-serria-600">Les conseils</strong>&nbsp;du
               pro
             </h2>
 
@@ -148,7 +148,7 @@ const RecipesIdPage = ({ params: { id } }) => {
           <div className="flex h-[550px] max-h-[550px] flex-col items-center rounded-xl bg-serria-300 bg-opacity-10 px-2 lg:col-span-2">
             <div className="mb-6 mt-8 flex text-center text-xl font-bold sm:text-3xl">
               <h2>
-                <strong className="text-serria-500">Historique</strong>
+                <strong className="text-serria-600">Historique</strong>
                 &nbsp;du&nbsp;
                 {cocktail.name}
               </h2>

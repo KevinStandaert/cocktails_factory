@@ -23,7 +23,7 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 flex items-center justify-between bg-gradient-to-r from-metal-400 to-black px-4 text-sm font-bold">
+    <header className="sticky top-0 z-50 flex items-center justify-between bg-gradient-to-r from-metal-500 to-black px-4 text-sm font-bold">
       <Link className="transition-all hover:scale-105 active:blur-sm" href="/">
         <Image
           className="-mb-3 -mt-3 h-auto w-40"
@@ -43,7 +43,7 @@ const Header = () => {
           onClick={toggleMenu}
         >
           <FontAwesomeIcon
-            className="mr-2 h-8 w-8 text-serria-500"
+            className="mr-2 h-8 w-8 text-serria-600"
             icon={faBars}
           />
         </button>
@@ -58,7 +58,7 @@ const Header = () => {
           onClick={toggleMenu}
         >
           <FontAwesomeIcon
-            className="mr-2 h-8 w-8 text-serria-500"
+            className="mr-2 h-8 w-8 text-serria-600"
             icon={faXmark}
           />
         </button>
@@ -67,10 +67,10 @@ const Header = () => {
             <li onClick={handleLinkClick}>
               <Link className="flex items-center" href="/recipes">
                 <FontAwesomeIcon
-                  className="mr-2 w-8 text-serria-500"
+                  className="mr-2 w-8 text-serria-600"
                   icon={faMartiniGlass}
                 />
-                <strong className="transition-all hover:scale-105 hover:text-serria-500 active:text-serria-700">
+                <strong className="transition-all hover:scale-105 hover:text-serria-600 active:text-serria-700">
                   Recettes de cocktails
                 </strong>
               </Link>
@@ -78,10 +78,10 @@ const Header = () => {
             <li onClick={handleLinkClick}>
               <Link className="flex items-center" href="/articles">
                 <FontAwesomeIcon
-                  className="mr-2 w-8 text-serria-500"
+                  className="mr-2 w-8 text-serria-600"
                   icon={faWandMagicSparkles}
                 />
-                <strong className="transition-all hover:scale-105 hover:text-serria-500 active:text-serria-700">
+                <strong className="transition-all hover:scale-105 hover:text-serria-600 active:text-serria-700">
                   L&apos;art du cocktail
                 </strong>
               </Link>
@@ -89,10 +89,10 @@ const Header = () => {
             <li onClick={handleLinkClick}>
               <Link className="flex items-center" href="/">
                 <FontAwesomeIcon
-                  className="mr-2 w-8 text-serria-500"
+                  className="mr-2 w-8 text-serria-600"
                   icon={faShop}
                 />
-                <strong className="transition-all hover:scale-105 hover:text-serria-500 active:text-serria-700">
+                <strong className="transition-all hover:scale-105 hover:text-serria-600 active:text-serria-700">
                   Où acheter ?
                 </strong>
               </Link>
@@ -107,10 +107,10 @@ const Header = () => {
           <li>
             <Link className="flex items-center" href="/recipes">
               <FontAwesomeIcon
-                className="mr-2 w-8 text-serria-500"
+                className="mr-2 w-8 text-serria-600"
                 icon={faMartiniGlass}
               />
-              <strong className="py-6 transition-all hover:scale-105 hover:text-serria-500 active:text-serria-700">
+              <strong className="py-6 transition-all hover:scale-105 hover:text-serria-600 active:text-serria-700">
                 Recettes de cocktails
               </strong>
             </Link>
@@ -118,10 +118,10 @@ const Header = () => {
           <li>
             <Link className="flex items-center" href="/articles">
               <FontAwesomeIcon
-                className="mr-2 w-8 text-serria-500"
+                className="mr-2 w-8 text-serria-600"
                 icon={faWandMagicSparkles}
               />
-              <strong className="py-6 transition-all hover:scale-105 hover:text-serria-500 active:text-serria-700">
+              <strong className="py-6 transition-all hover:scale-105 hover:text-serria-600 active:text-serria-700">
                 L&apos;art du cocktail
               </strong>
             </Link>
@@ -129,10 +129,10 @@ const Header = () => {
           <li>
             <Link className="flex items-center" href="/">
               <FontAwesomeIcon
-                className="mr-2 w-8 text-serria-500"
+                className="mr-2 w-8 text-serria-600"
                 icon={faShop}
               />
-              <strong className="py-6 transition-all hover:scale-105 hover:text-serria-500 active:text-serria-700">
+              <strong className="py-6 transition-all hover:scale-105 hover:text-serria-600 active:text-serria-700">
                 Où acheter ?
               </strong>
             </Link>

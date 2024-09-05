@@ -29,7 +29,7 @@ const MaterialCard = ({ dataUrl }) => {
         height={200}
         className="mb-6 mt-6 h-40 w-auto rounded-xl shadow-xl shadow-black sm:h-52"
       />
-      <h2 className="font-bold text-serria-500 sm:text-2xl">{material.name}</h2>
+      <h2 className="font-bold text-serria-600 sm:text-2xl">{material.name}</h2>
     </Link>
   ));
 };
