@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr">
       <body
-        className={`${roboto.className} bg-gradient-to-r from-metal-500 to-black text-gray-100`}
+        className={`${roboto.className} bg-gradient-to-r from-metal-600 to-black text-gray-100`}
       >
         <Header />
         <AgeConfirmationModal />
