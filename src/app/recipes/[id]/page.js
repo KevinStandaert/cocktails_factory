@@ -107,7 +107,7 @@ const RecipesIdPage = ({ params: { id } }) => {
                   ))}
                 </ul>
               </div>
-              <p className="overflow-y-auto p-2 text-justify text-sm  md:p-4 md:text-xl">
+              <p className="overflow-y-auto p-2 text-justify text-sm md:p-4 md:text-xl">
                 {cocktail.description}
               </p>
             </div>
@@ -121,7 +121,7 @@ const RecipesIdPage = ({ params: { id } }) => {
               </h2>
             </div>
             <div className="flex h-[85%] flex-col items-start justify-center p-4 lg:p-6">
-              <ul className="list-inside list-disc mb-8 overflow-y-auto p-2 text-justify text-sm sm:text-base md:p-4 lg:text-xl">
+              <ul className="mb-8 list-inside list-disc overflow-y-auto p-2 text-left text-sm sm:text-base md:p-4 lg:text-xl">
                 <li className="mb-2 lg:mb-6">{cocktail.step_1}</li>
                 <li className="mb-2 lg:mb-6">{cocktail.step_2}</li>
                 <li className="mb-2 lg:mb-6">{cocktail.step_3}</li>
