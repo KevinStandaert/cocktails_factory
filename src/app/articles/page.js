@@ -3,6 +3,27 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+export const metadata = {
+  title: "Liste des articles",
+  description:
+    "Explorez notre gamme d’articles pour approfondir vos connaissances sur l’univers du bar.",
+  openGraph: {
+    type: "website",
+    url: "https://cocktails-factory.vercel.app/articles",
+    title: "Liste des articles | Cocktails Factory - Fabrique à Cocktails",
+    description:
+      "Explorez notre gamme d’articles pour approfondir vos connaissances sur l’univers du bar.",
+    images: [
+      {
+        url: "https://cocktails-factory.vercel.app/logo_cocktails_factory.webp",
+        width: 1024,
+        height: 1024,
+        alt: "Image représentant les articles pour apprendre à faire des cocktails",
+      },
+    ],
+  },
+};
+
 const Articles = () => {
   return (
     <div className="flex min-h-screen flex-col items-center p-12">

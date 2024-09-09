@@ -1,22 +1,42 @@
-"use client";
-
 import React from "react";
-import useFetchData from "../../../../utils/apiClient";
 
-export const dynamic = "force-static";
-
-const ArticleIdPage = ({ params: { id } }) => {
-  const { data: material, loading, error } = useFetchData(`/materials/${id}`);
-
-  if (loading) {
-    return <div className="mt-24 text-xl">Chargement...</div>;
+// La fonction pour récupérer les données côté serveur
+async function fetchMaterial(id) {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/materials/${id}`);
+  if (!res.ok) {
+    throw new Error('Erreur de chargement des données');
   }
+  return res.json();
+}
 
-  if (error) {
-    return (
-      <div className="mt-24 text-xl">Erreur de chargement des données...</div>
-    );
-  }
+// La fonction pour générer des métadonnées
+export async function generateMetadata({ params }) {
+  const material = await fetchMaterial(params.id);
+  return {
+    title: `${material.name}`,
+    description: `Découvrez l'utilisation de ${material.name} grâce à cocktails factory !`,
+    openGraph: {
+      type: 'website',
+      url: `https://cocktails-factory.vercel.app/materials/${params.id}`,
+      title: `${material.name} | Cocktails Factory - Fabrique à Cocktails`,
+      description: `Découvrez l'utilisation de ${material.name} grâce à cocktails factory !`,
+      images: [
+        {
+          url: `https://cocktails-factory.vercel.app/${material.url_image}`,
+          width: 1024,
+          height: 1024,
+          alt: `Image représentant ${material.name}`,
+        },
+      ],
+    },
+  };
+}
+
+const MaterialsIdPage = async ({ params }) => {
+  const { id } = params;
+  const material = await fetchMaterial(id);
+
+  
 
   return (
     <div className="container mx-auto mt-8 rounded-xl bg-serria-300 bg-opacity-10 p-6">
@@ -97,4 +117,4 @@ const ArticleIdPage = ({ params: { id } }) => {
   );
 };
 
-export default ArticleIdPage;
+export default MaterialsIdPage;
