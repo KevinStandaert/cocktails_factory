@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import useFetchData from "../../../utils/apiClient";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -16,6 +16,12 @@ export const dynamic = "force-static";
 const RecipesIdPage = ({ params: { id } }) => {
   const { data: cocktail, loading, error } = useFetchData(`/recipes/${id}`);
   const backgroundImage = `url(/${cocktail.url_image})`;
+
+  useEffect(() => {
+    if (cocktail) {
+      document.title = `Recette de ${cocktail.name}`;
+    }
+  }, [cocktail]);
 
   if (loading) {
     return <div className="mt-24 text-xl">Chargement...</div>;
