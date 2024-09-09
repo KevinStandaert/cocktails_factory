@@ -1,7 +1,4 @@
-"use client";
-
-import React, { useEffect } from "react";
-import useFetchData from "../../../utils/apiClient";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMartiniGlass,
@@ -11,27 +8,43 @@ import {
   faFaceGrinTongue,
 } from "@fortawesome/free-solid-svg-icons";
 
-export const dynamic = "force-static";
+// La fonction pour récupérer les données côté serveur
+async function fetchCocktail(id) {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/recipes/${id}`);
+  if (!res.ok) {
+    throw new Error('Erreur de chargement des données');
+  }
+  return res.json();
+}
 
-const RecipesIdPage = ({ params: { id } }) => {
-  const { data: cocktail, loading, error } = useFetchData(`/recipes/${id}`);
+// La fonction pour générer des métadonnées
+export async function generateMetadata({ params }) {
+  const cocktail = await fetchCocktail(params.id);
+  return {
+    title: `Recette de ${cocktail.name}`,
+    description: `Découvrez comment réaliser la recette de ${cocktail.name} avec ${cocktail.ingredients.length} ingrédients grâce à cocktails factory !`,
+    openGraph: {
+      type: 'website',
+      url: `https://cocktails-factory.vercel.app/recipes/${params.id}`,
+      title: `Recette de ${cocktail.name} | Cocktails Factory - Fabrique à Cocktails`,
+      description: `Découvrez comment réaliser la recette de ${cocktail.name} avec ${cocktail.ingredients.length} ingrédients grâce à cocktails factory !`,
+      images: [
+        {
+          url: `https://cocktails-factory.vercel.app/${cocktail.url_image}`,
+          width: 1024,
+          height: 1024,
+          alt: `Image représentant ${cocktail.name}`,
+        },
+      ],
+    },
+  };
+}
+
+const RecipesIdPage = async ({ params }) => {
+  const { id } = params;
+  const cocktail = await fetchCocktail(id);
+
   const backgroundImage = `url(/${cocktail.url_image})`;
-
-  useEffect(() => {
-    if (cocktail) {
-      document.title = `Recette de ${cocktail.name}`;
-    }
-  }, [cocktail]);
-
-  if (loading) {
-    return <div className="mt-24 text-xl">Chargement...</div>;
-  }
-
-  if (error) {
-    return (
-      <div className="mt-24 text-xl">Erreur de chargement des données...</div>
-    );
-  }
 
   return (
     <div className="container mx-auto mt-8 rounded-xl bg-serria-300 bg-opacity-10 p-6">
