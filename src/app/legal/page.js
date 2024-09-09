@@ -1,4 +1,23 @@
-// pages/legal.js
+export const metadata = {
+  title: "Mentions légales",
+  description:
+    "Mentions légales du site Cocktails Factory - Fabrique à Cocktails",
+  openGraph: {
+    type: "website",
+    url: "https://cocktails-factory.vercel.app/legal",
+    title: "Mentions légales | Cocktails Factory - Fabrique à Cocktails",
+    description:
+      "Mentions légales du site Cocktails Factory - Fabrique à Cocktails",
+    images: [
+      {
+        url: "https://cocktails-factory.vercel.app/logo_cocktails_factory.webp",
+        width: 1024,
+        height: 1024,
+        alt: "Image représentant le matériels pour faire des cocktails",
+      },
+    ],
+  },
+};
 
 const Legal = () => {
   return (

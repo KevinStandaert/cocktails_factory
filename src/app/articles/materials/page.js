@@ -1,6 +1,27 @@
 import React from "react";
 import MaterialCard from "../../../components/materialCard";
 
+export const metadata = {
+  title: "Liste du matériels",
+  description:
+    "Découvrez tout le matériel indispensable pour devenir un véritable barman.",
+  openGraph: {
+    type: "website",
+    url: "https://cocktails-factory.vercel.app/articles/materials",
+    title: "Liste du matériels | Cocktails Factory - Fabrique à Cocktails",
+    description:
+      "Découvrez tout le matériel indispensable pour devenir un véritable barman.",
+    images: [
+      {
+        url: "https://cocktails-factory.vercel.app/materiels.webp",
+        width: 1024,
+        height: 1024,
+        alt: "Image représentant le matériels pour faire des cocktails",
+      },
+    ],
+  },
+};
+
 const MaterialsList = () => {
   const dataUrl = "/materials";
 
