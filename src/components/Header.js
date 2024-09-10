@@ -11,6 +11,7 @@ import {
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+import SearchBar from "./SearchBar";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,8 +23,26 @@ const Header = () => {
     }, 300);
   };
 
+  const handleSearch = async (query) => {
+    try {
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/recipes?search=${query}`,
+      );
+      const recipes = await res.json();
+
+      // Filtrer les recettes en fonction de la recherche
+      const filteredRecipes = recipes.filter((recipe) =>
+        recipe.name.toLowerCase().includes(query.toLowerCase()),
+      );
+
+      console.log(filteredRecipes); // Afficher les résultats filtrés ici
+    } catch (error) {
+      throw new Error("Erreur de chargement des données");
+    }
+  };
+
   return (
-    <header className="sticky top-0 z-50 flex py-4 items-center justify-between bg-gradient-to-r from-metal-600 to-black px-4 text-sm font-bold">
+    <header className="sticky top-0 z-50 flex items-center justify-between bg-gradient-to-r from-metal-600 to-black px-4 py-4 text-sm font-bold">
       <Link className="transition-all hover:scale-105 active:blur-sm" href="/">
         <Image
           className="-mb-3 -mt-3 h-auto w-24 lg:w-40"
@@ -36,6 +55,10 @@ const Header = () => {
       </Link>
 
       {/* menu mobile screen */}
+      <div className="absolute right-16 mr-2 md:hidden">
+        <SearchBar onSearch={handleSearch} />
+      </div>
+
       <div className="relative md:hidden">
         <button
           aria-label="Ouvrir le menu"
@@ -138,6 +161,9 @@ const Header = () => {
             </Link>
           </li>
         </ul>
+        <div className="mr-2">
+          <SearchBar onSearch={handleSearch} />
+        </div>
       </nav>
     </header>
   );
