@@ -1,6 +1,6 @@
 "use client";
 
-import { React, useState } from "react";
+import { React, useState, useCallback } from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -12,9 +12,13 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import SearchBar from "./SearchBar";
+import SearchModal from "./SearchModal";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [searchResults, setSearchResults] = useState([]);
+
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const handleLinkClick = () => {
@@ -23,22 +27,35 @@ const Header = () => {
     }, 300);
   };
 
-  const handleSearch = async (query) => {
-    try {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/recipes?search=${query}`,
-      );
-      const recipes = await res.json();
-
-      // Filtrer les recettes en fonction de la recherche
-      const filteredRecipes = recipes.filter((recipe) =>
-        recipe.name.toLowerCase().includes(query.toLowerCase()),
-      );
-
-      console.log(filteredRecipes); // Afficher les résultats filtrés ici
-    } catch (error) {
-      throw new Error("Erreur de chargement des données");
+  const fetchResults = useCallback(async (query) => {
+    if (query.length === 0) {
+      setSearchResults([]);
+      return;
     }
+    try {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/recipes/cards?search=${query}`);
+      if (!res.ok) throw new Error("Erreur lors de la récupération des données.");
+      const data = await res.json();
+
+      // Filtrer les résultats en fonction de la query
+      const filteredResults = data.filter(cocktail =>
+        cocktail.name.toLowerCase().includes(query.toLowerCase())
+      );
+      setSearchResults(filteredResults);
+    } catch (error) {
+      console.error("Erreur lors de la recherche :", error);
+      setSearchResults([]);
+    }
+  }, []);
+
+  const handleSearch = useCallback((query) => {
+    setIsModalOpen(true);
+    fetchResults(query);
+  }, [fetchResults]);
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSearchResults([]);
   };
 
   return (
@@ -51,7 +68,7 @@ const Header = () => {
           width={180}
           height={100}
           alt="Cocktails Factory logo"
-        />{" "}
+        />
       </Link>
 
       {/* menu mobile screen */}
@@ -165,6 +182,13 @@ const Header = () => {
           <SearchBar onSearch={handleSearch} />
         </div>
       </nav>
+
+      {/* Search Modal */}
+      <SearchModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        searchResults={searchResults}
+      />
     </header>
   );
 };

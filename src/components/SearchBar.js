@@ -7,7 +7,7 @@ const SearchBar = ({ onSearch }) => {
   useEffect(() => {
     const handler = setTimeout(() => {
       setDebouncedQuery(query);
-    }, 1000); // Délai de 1000 ms pour le debouncing
+    }, 1000); // Délais pour le debouncing
 
     return () => {
       clearTimeout(handler);
@@ -15,8 +15,8 @@ const SearchBar = ({ onSearch }) => {
   }, [query]);
 
   useEffect(() => {
-    if (debouncedQuery.length >= 3) { // Lance la recherche si la requête a au moins 3 caractères
-      onSearch(debouncedQuery);
+    if (debouncedQuery.length >= 3) {
+      onSearch(debouncedQuery); // Lance la recherche uniquement si la requête a au moins 3 caractères
     }
   }, [debouncedQuery, onSearch]);
 
@@ -24,20 +24,17 @@ const SearchBar = ({ onSearch }) => {
     setQuery(e.target.value);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault(); // Empêche le rechargement de la page
-  };
-
   return (
-    <form className="flex items-center gap-1 ml-2 text-gray-950" onSubmit={handleSubmit}>
+    <div className="flex items-center gap-1 ml-2 text-gray-950">
       <input
         type="text"
         value={query}
         onChange={handleInputChange}
         placeholder="Rechercher..."
+        aria-label="Barre de recherche"
         className="w-full rounded-xl border py-2 md:px-6 px-1"
       />
-    </form>
+    </div>
   );
 };
 
