@@ -9,6 +9,9 @@ export const metadata = {
     type: "website",
     url: "https://cocktails-factory.vercel.app/recipes",
     title: "Liste des recettes | Cocktails Factory - Fabrique à Cocktails",
+    alternates: {
+      canonical: "https://cocktails-factory.vercel.app/recipes",
+    },
     description:
       "Découvrez toutes les recettes de cocktails disponibles sur cocktails factory !",
     images: [
