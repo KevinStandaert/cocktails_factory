@@ -15,32 +15,48 @@ import SearchBar from "./SearchBar";
 import SearchModal from "./SearchModal";
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [searchResults, setSearchResults] = useState([]);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // État du menu mobile
+  const [isModalOpen, setIsModalOpen] = useState(false); // État de la modal de recherche
+  const [searchResults, setSearchResults] = useState([]); // Résultats de recherche
+  const [clearQuery, setClearQuery] = useState(false); // Réinitialisation de la barre de recherche
 
+  // Gestion de l'ouverture et fermeture du menu
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+  // Fonction appelée lors du clic sur un lien dans le menu pour fermer le menu
   const handleLinkClick = () => {
-    setTimeout(() => {
-      setIsMenuOpen(false);
-    }, 300);
+    setIsMenuOpen(false); // Fermeture du menu
   };
 
+  // Fonction pour récupérer les résultats de recherche
   const fetchResults = useCallback(async (query) => {
     if (query.length === 0) {
       setSearchResults([]);
       return;
     }
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/recipes/cards?search=${query}`);
-      if (!res.ok) throw new Error("Erreur lors de la récupération des données.");
+      // Normaliser la requête de recherche pour retirer les accents
+      const normalizedQuery = query
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase();
+
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/recipes/cards?search=${query}`,
+      );
+      if (!res.ok)
+        throw new Error("Erreur lors de la récupération des données.");
       const data = await res.json();
 
-      // Filtrer les résultats en fonction de la query
-      const filteredResults = data.filter(cocktail =>
-        cocktail.name.toLowerCase().includes(query.toLowerCase())
-      );
+      // Filtrer les résultats en comparant les versions normalisées (sans accents)
+      const filteredResults = data.filter((cocktail) => {
+        const normalizedName = cocktail.name
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .toLowerCase();
+        return normalizedName.includes(normalizedQuery);
+      });
+
       setSearchResults(filteredResults);
     } catch (error) {
       console.error("Erreur lors de la recherche :", error);
@@ -48,14 +64,20 @@ const Header = () => {
     }
   }, []);
 
-  const handleSearch = useCallback((query) => {
-    setIsModalOpen(true);
-    fetchResults(query);
-  }, [fetchResults]);
+  // Fonction appelée pour lancer la recherche
+  const handleSearch = useCallback(
+    (query) => {
+      setIsModalOpen(true); // Ouvre la modal
+      fetchResults(query); // Fait la recherche
+      setClearQuery(false); // Ne réinitialise pas la recherche immédiatement
+    },
+    [fetchResults],
+  );
 
+  // Fermeture de la modal de recherche et réinitialisation de la barre de recherche
   const handleCloseModal = () => {
     setIsModalOpen(false);
-    setSearchResults([]);
+    setClearQuery(true); // Réinitialise le champ de recherche lorsque la modal se ferme
   };
 
   return (
@@ -71,9 +93,10 @@ const Header = () => {
         />
       </Link>
 
-      {/* menu mobile screen */}
+      {/* Menu mobile */}
       <div className="absolute right-16 mr-2 md:hidden">
-        <SearchBar onSearch={handleSearch} />
+        <SearchBar onSearch={handleSearch} clearQuery={clearQuery} />{" "}
+        {/* Barre de recherche mobile */}
       </div>
 
       <div className="relative md:hidden">
@@ -141,7 +164,7 @@ const Header = () => {
         </nav>
       </div>
 
-      {/* menu full screen */}
+      {/* Menu grand écran */}
       <nav className="hidden items-center gap-6 md:flex">
         <ul className="mr-2 flex items-center gap-6">
           <li>
@@ -179,15 +202,17 @@ const Header = () => {
           </li>
         </ul>
         <div className="mr-2">
-          <SearchBar onSearch={handleSearch} />
+          <SearchBar onSearch={handleSearch} clearQuery={clearQuery} />{" "}
+          {/* Barre de recherche pour grand écran */}
         </div>
       </nav>
 
-      {/* Search Modal */}
+      {/* Modal de recherche */}
       <SearchModal
         isOpen={isModalOpen}
         onClose={handleCloseModal}
         searchResults={searchResults}
+        clearSearch={() => setClearQuery(true)}
       />
     </header>
   );

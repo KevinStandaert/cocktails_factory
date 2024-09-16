@@ -1,18 +1,42 @@
-// components/SearchModal.js
 "use client";
 
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+import React, { useEffect, useRef } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
-const SearchModal = ({ isOpen, onClose, searchResults }) => {
+const SearchModal = ({ isOpen, onClose, searchResults, clearSearch }) => {
+  const modalRef = useRef();
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        onClose();
+        clearSearch(); // Efface la barre de recherche
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen, onClose, clearSearch]);
+
   if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-50 bg-black text-gray-950 bg-opacity-70 flex items-center justify-center p-4">
-      <div className="bg-white rounded-lg w-full max-w-3xl max-h-[80vh] overflow-auto relative">
+      <div
+        ref={modalRef}
+        className="bg-white rounded-lg w-full max-w-3xl max-h-[80vh] overflow-auto relative"
+      >
         <button
-          onClick={onClose}
+          onClick={() => {
+            onClose();
+            clearSearch(); // Efface la barre de recherche
+          }}
           className="absolute top-0 right-2 p-1 text-4xl text-serria-600"
         >
           ×
@@ -20,11 +44,15 @@ const SearchModal = ({ isOpen, onClose, searchResults }) => {
         <div className="p-4">
           <h2 className="text-xl font-bold mb-4">Résultats de recherche</h2>
           {searchResults && searchResults.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2  gap-4">
-              {searchResults.map(cocktail => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {searchResults.map((cocktail) => (
                 <Link
                   href={`/recipes/${cocktail.id}`}
                   key={cocktail.id}
+                  onClick={() => {
+                    onClose();
+                    clearSearch(); // Efface la barre de recherche
+                  }}
                   className="flex flex-col items-center justify-between rounded-xl bg-serria-300 bg-opacity-10 p-4"
                 >
                   <Image
@@ -36,7 +64,6 @@ const SearchModal = ({ isOpen, onClose, searchResults }) => {
                     className="h-40 w-auto rounded-xl mb-4 shadow-xl"
                   />
                   <h3 className="font-bold text-serria-600 text-lg">{cocktail.name}</h3>
-                  
                 </Link>
               ))}
             </div>
