@@ -6,7 +6,7 @@ export const metadata = {
   description:
     "Découvrez tout le matériel indispensable pour devenir un véritable barman.",
   alternates: {
-    canonical: "https://cocktails-factory.vercel.app/materials",
+    canonical: "https://cocktails-factory.vercel.app/articles/materials",
   },
   openGraph: {
     type: "website",
