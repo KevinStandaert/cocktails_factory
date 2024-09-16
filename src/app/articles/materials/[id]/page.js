@@ -4,7 +4,7 @@ import React from "react";
 async function fetchMaterial(id) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/materials/${id}`);
   if (!res.ok) {
-    throw new Error('Erreur de chargement des données');
+    throw new Error("Erreur de chargement des données");
   }
   return res.json();
 }
@@ -15,8 +15,11 @@ export async function generateMetadata({ params }) {
   return {
     title: `${material.name}`,
     description: `Découvrez l'utilisation de ${material.name} grâce à cocktails factory !`,
+    alternates: {
+      canonical: `https://cocktails-factory.vercel.app/materials/${params.id}`,
+    },
     openGraph: {
-      type: 'website',
+      type: "website",
       url: `https://cocktails-factory.vercel.app/materials/${params.id}`,
       title: `${material.name} | Cocktails Factory - Fabrique à Cocktails`,
       description: `Découvrez l'utilisation de ${material.name} grâce à cocktails factory !`,
@@ -35,8 +38,6 @@ export async function generateMetadata({ params }) {
 const MaterialsIdPage = async ({ params }) => {
   const { id } = params;
   const material = await fetchMaterial(id);
-
-  
 
   return (
     <div className="container mx-auto mt-8 rounded-xl bg-serria-300 bg-opacity-10 p-6">

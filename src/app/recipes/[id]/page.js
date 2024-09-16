@@ -23,6 +23,9 @@ export async function generateMetadata({ params }) {
   return {
     title: `Recette de ${cocktail.name}`,
     description: `Découvrez comment réaliser la recette de ${cocktail.name} avec ${cocktail.ingredients.length} ingrédients grâce à cocktails factory !`,
+    alternates: {
+      canonical: `https://cocktails-factory.vercel.app/recipes/${params.id}`,
+    },
     openGraph: {
       type: 'website',
       url: `https://cocktails-factory.vercel.app/recipes/${params.id}`,

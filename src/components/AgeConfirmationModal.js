@@ -27,26 +27,29 @@ const AgeConfirmationModal = () => {
   if (!isModalOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-800 bg-opacity-90">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-800 bg-opacity-90 text-center">
       <div className="rounded-lg bg-serria-400 p-6 text-white shadow-xl shadow-black">
-        <h2 className="mb-4 text-2xl">Confirmez votre âge</h2>
-        <p className="mb-4">
-          Vous devez avoir plus de 18 ans pour accéder au site.
-        </p>
-        <div className="flex justify-center space-x-4">
+        <h2 className="mb-10 text-3xl">Cocktails Factory</h2>
+        <p className="mb-4 text-2xl">Je suis majeur</p>
+
+        <div className="flex justify-center space-x-4 mb-10">
           <button
             onClick={handleConfirm}
-            className="rounded-lg shadow-md shadow-black bg-metal-400 px-4 py-2 font-bold text-white hover:bg-metal-800 active:bg-metal-400"
+            className="rounded-lg bg-metal-400 px-4 py-2 font-bold text-white shadow-md shadow-black hover:bg-metal-800 active:bg-metal-400"
           >
-            On y va !
+            Oui
           </button>
           <button
             onClick={handleDeny}
-            className="rounded-lg shadow-md shadow-black bg-red-400 px-4 py-2 font-bold text-white hover:bg-red-800 active:bg-red-400"
+            className="rounded-lg bg-red-400 px-4 py-2 font-bold text-white shadow-md shadow-black hover:bg-red-800 active:bg-red-400"
           >
-            Je suis mineur(e)
+            Non
           </button>
         </div>
+        <p className="mb-2">
+        Site internet réservé aux personnes majeures
+        </p>
+        
       </div>
     </div>
   );

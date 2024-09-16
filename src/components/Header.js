@@ -1,6 +1,6 @@
 "use client";
 
-import { React, useState } from "react";
+import { React, useState, useCallback } from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -11,19 +11,77 @@ import {
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+import SearchBar from "./SearchBar";
+import SearchModal from "./SearchModal";
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // État du menu mobile
+  const [isModalOpen, setIsModalOpen] = useState(false); // État de la modal de recherche
+  const [searchResults, setSearchResults] = useState([]); // Résultats de recherche
+  const [clearQuery, setClearQuery] = useState(false); // Réinitialisation de la barre de recherche
+
+  // Gestion de l'ouverture et fermeture du menu
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+  // Fonction appelée lors du clic sur un lien dans le menu pour fermer le menu
   const handleLinkClick = () => {
-    setTimeout(() => {
-      setIsMenuOpen(false);
-    }, 300);
+    setIsMenuOpen(false); // Fermeture du menu
+  };
+
+  // Fonction pour récupérer les résultats de recherche
+  const fetchResults = useCallback(async (query) => {
+    if (query.length === 0) {
+      setSearchResults([]);
+      return;
+    }
+    try {
+      // Normaliser la requête de recherche pour retirer les accents
+      const normalizedQuery = query
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase();
+
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/recipes/cards?search=${query}`,
+      );
+      if (!res.ok)
+        throw new Error("Erreur lors de la récupération des données.");
+      const data = await res.json();
+
+      // Filtrer les résultats en comparant les versions normalisées (sans accents)
+      const filteredResults = data.filter((cocktail) => {
+        const normalizedName = cocktail.name
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .toLowerCase();
+        return normalizedName.includes(normalizedQuery);
+      });
+
+      setSearchResults(filteredResults);
+    } catch (error) {
+      console.error("Erreur lors de la recherche :", error);
+      setSearchResults([]);
+    }
+  }, []);
+
+  // Fonction appelée pour lancer la recherche
+  const handleSearch = useCallback(
+    (query) => {
+      setIsModalOpen(true); // Ouvre la modal
+      fetchResults(query); // Fait la recherche
+      setClearQuery(false); // Ne réinitialise pas la recherche immédiatement
+    },
+    [fetchResults],
+  );
+
+  // Fermeture de la modal de recherche et réinitialisation de la barre de recherche
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setClearQuery(true); // Réinitialise le champ de recherche lorsque la modal se ferme
   };
 
   return (
-    <header className="sticky top-0 z-50 flex py-4 items-center justify-between bg-gradient-to-r from-metal-600 to-black px-4 text-sm font-bold">
+    <header className="sticky top-0 z-50 flex items-center justify-between bg-gradient-to-r from-metal-600 to-black px-4 py-4 text-sm font-bold">
       <Link className="transition-all hover:scale-105 active:blur-sm" href="/">
         <Image
           className="-mb-3 -mt-3 h-auto w-24 lg:w-40"
@@ -32,10 +90,15 @@ const Header = () => {
           width={180}
           height={100}
           alt="Cocktails Factory logo"
-        />{" "}
+        />
       </Link>
 
-      {/* menu mobile screen */}
+      {/* Menu mobile */}
+      <div className="absolute right-16 mr-2 md:hidden">
+        <SearchBar onSearch={handleSearch} clearQuery={clearQuery} />{" "}
+        {/* Barre de recherche mobile */}
+      </div>
+
       <div className="relative md:hidden">
         <button
           aria-label="Ouvrir le menu"
@@ -101,7 +164,7 @@ const Header = () => {
         </nav>
       </div>
 
-      {/* menu full screen */}
+      {/* Menu grand écran */}
       <nav className="hidden items-center gap-6 md:flex">
         <ul className="mr-2 flex items-center gap-6">
           <li>
@@ -138,7 +201,19 @@ const Header = () => {
             </Link>
           </li>
         </ul>
+        <div className="mr-2">
+          <SearchBar onSearch={handleSearch} clearQuery={clearQuery} />{" "}
+          {/* Barre de recherche pour grand écran */}
+        </div>
       </nav>
+
+      {/* Modal de recherche */}
+      <SearchModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        searchResults={searchResults}
+        clearSearch={() => setClearQuery(true)}
+      />
     </header>
   );
 };
