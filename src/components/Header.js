@@ -18,6 +18,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // État du menu mobile
   const [isModalOpen, setIsModalOpen] = useState(false); // État de la modal de recherche
   const [searchResults, setSearchResults] = useState([]); // Résultats de recherche
+  const [searchQuery, setSearchQuery] = useState(""); // Requête de recherche
   const [clearQuery, setClearQuery] = useState(false); // Réinitialisation de la barre de recherche
 
   // Gestion de l'ouverture et fermeture du menu
@@ -35,11 +36,14 @@ const Header = () => {
       return;
     }
     try {
-      // Normaliser la requête de recherche pour retirer les accents
-      const normalizedQuery = query
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .toLowerCase();
+      // Supprimer les accents de la requête de recherche
+      const normalize = (str) =>
+        str
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "");
+
+      const normalizedQuery = normalize(query);
 
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/recipes/cards?search=${query}`,
@@ -48,13 +52,22 @@ const Header = () => {
         throw new Error("Erreur lors de la récupération des données.");
       const data = await res.json();
 
-      // Filtrer les résultats en comparant les versions normalisées (sans accents)
+      // Filtrer les résultats par nom ou par ingrédients
       const filteredResults = data.filter((cocktail) => {
-        const normalizedName = cocktail.name
-          .normalize("NFD")
-          .replace(/[\u0300-\u036f]/g, "")
-          .toLowerCase();
-        return normalizedName.includes(normalizedQuery);
+        const normalizedName = normalize(cocktail.name);
+
+        // Normaliser les ingrédients pour permettre la recherche
+        const normalizedIngredients = cocktail.ingredients.map((ingredient) =>
+          normalize(ingredient),
+        );
+
+        // Vérifier si la query est incluse dans le nom ou dans les ingrédients
+        return (
+          normalizedName.includes(normalizedQuery) ||
+          normalizedIngredients.some((ingredient) =>
+            ingredient.includes(normalizedQuery),
+          )
+        );
       });
 
       setSearchResults(filteredResults);
@@ -67,6 +80,7 @@ const Header = () => {
   // Fonction appelée pour lancer la recherche
   const handleSearch = useCallback(
     (query) => {
+      setSearchQuery(query); // Met à jour la requête de recherche
       setIsModalOpen(true); // Ouvre la modal
       fetchResults(query); // Fait la recherche
       setClearQuery(false); // Ne réinitialise pas la recherche immédiatement
@@ -213,6 +227,7 @@ const Header = () => {
         onClose={handleCloseModal}
         searchResults={searchResults}
         clearSearch={() => setClearQuery(true)}
+        query={searchQuery}
       />
     </header>
   );
