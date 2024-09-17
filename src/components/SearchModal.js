@@ -4,7 +4,13 @@ import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const SearchModal = ({ isOpen, onClose, searchResults, clearSearch }) => {
+const SearchModal = ({
+  isOpen,
+  onClose,
+  searchResults,
+  clearSearch,
+  query,
+}) => {
   const modalRef = useRef();
 
   useEffect(() => {
@@ -27,24 +33,27 @@ const SearchModal = ({ isOpen, onClose, searchResults, clearSearch }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-black text-gray-950 bg-opacity-70 flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 p-4 text-gray-950">
       <div
         ref={modalRef}
-        className="bg-white rounded-lg w-full max-w-3xl max-h-[80vh] overflow-auto relative"
+        className="relative max-h-[80vh] w-full max-w-3xl overflow-auto rounded-lg bg-white"
       >
         <button
           onClick={() => {
             onClose();
             clearSearch(); // Efface la barre de recherche
           }}
-          className="absolute top-0 right-2 p-1 text-4xl text-serria-600"
+          className="absolute right-2 top-0 p-1 text-4xl text-serria-600"
         >
           ×
         </button>
         <div className="p-4">
-          <h2 className="text-xl font-bold mb-4">Résultats de recherche</h2>
+          <h2 className="mb-4 text-xl font-bold">
+            Résultats de recherche pour :{" "}
+            <span className="text-serria-600">{query}</span>
+          </h2>
           {searchResults && searchResults.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               {searchResults.map((cocktail) => (
                 <Link
                   href={`/recipes/${cocktail.id}`}
@@ -61,14 +70,18 @@ const SearchModal = ({ isOpen, onClose, searchResults, clearSearch }) => {
                     priority
                     width={250}
                     height={200}
-                    className="h-40 w-auto rounded-xl mb-4 shadow-xl"
+                    className="mb-4 h-40 w-auto rounded-xl shadow-xl"
                   />
-                  <h3 className="font-bold text-serria-600 text-lg">{cocktail.name}</h3>
+                  <h3 className="text-lg font-bold text-serria-600">
+                    {cocktail.name}
+                  </h3>
                 </Link>
               ))}
             </div>
           ) : (
-            <div className="text-xl text-center mt-4">Aucun résultat trouvé.</div>
+            <div className="mt-4 text-center text-xl">
+              Aucun résultat trouvé.
+            </div>
           )}
         </div>
       </div>

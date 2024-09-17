@@ -49,7 +49,7 @@ export default function RootLayout({ children }) {
             height="0"
             width="0"
             style={{ display: "none", visibility: "hidden" }}
-          ></iframe>
+           ></iframe>
         </noscript>
 
         <Header />
