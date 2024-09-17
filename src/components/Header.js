@@ -52,7 +52,7 @@ const Header = () => {
         throw new Error("Erreur lors de la récupération des données.");
       const data = await res.json();
 
-      // Filtrer les résultats par nom ou par ingrédients
+      // Filtrer les résultats par nom, par ingrédients ou par goût
       const filteredResults = data.filter((cocktail) => {
         const normalizedName = normalize(cocktail.name);
 
@@ -61,12 +61,16 @@ const Header = () => {
           normalize(ingredient),
         );
 
-        // Vérifier si la query est incluse dans le nom ou dans les ingrédients
+        // Normaliser les goûts pour permettre la recherche
+        const normalizedTaste = normalize(cocktail.taste);
+
+        // Vérifier si la query est incluse dans le nom, les ingrédients ou les goûts
         return (
           normalizedName.includes(normalizedQuery) ||
           normalizedIngredients.some((ingredient) =>
             ingredient.includes(normalizedQuery),
-          )
+          ) ||
+          normalizedTaste.includes(normalizedQuery) // Recherche par goût
         );
       });
 
