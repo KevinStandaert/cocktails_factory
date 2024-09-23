@@ -35,13 +35,13 @@ const Header = () => {
       setSearchResults([]);
       return;
     }
+
     try {
-      // Supprimer les accents de la requête de recherche
       const normalize = (str) =>
         str
           .toLowerCase()
           .normalize("NFD")
-          .replace(/[\u0300-\u036f]/g, "");
+          .replace(/[\u0300-\u036f]/g, ""); // Supprimer les accents et mettre en minuscule
 
       const normalizedQuery = normalize(query);
 
@@ -52,27 +52,43 @@ const Header = () => {
         throw new Error("Erreur lors de la récupération des données.");
       const data = await res.json();
 
-      // Filtrer les résultats par nom, par ingrédients ou par goût
-      const filteredResults = data.filter((cocktail) => {
+      // Première recherche avec "startsWith"
+      let filteredResults = data.filter((cocktail) => {
         const normalizedName = normalize(cocktail.name);
-
-        // Normaliser les ingrédients pour permettre la recherche
         const normalizedIngredients = cocktail.ingredients.map((ingredient) =>
           normalize(ingredient),
         );
-
-        // Normaliser les goûts pour permettre la recherche
         const normalizedTaste = normalize(cocktail.taste);
 
-        // Vérifier si la query est incluse dans le nom, les ingrédients ou les goûts
+        // Recherche stricte au début du nom, des ingrédients ou du goût
         return (
-          normalizedName.includes(normalizedQuery) ||
+          normalizedName.startsWith(normalizedQuery) ||
           normalizedIngredients.some((ingredient) =>
-            ingredient.includes(normalizedQuery),
+            ingredient.startsWith(normalizedQuery),
           ) ||
-          normalizedTaste.includes(normalizedQuery) // Recherche par goût
+          normalizedTaste.startsWith(normalizedQuery)
         );
       });
+
+      // Si aucun résultat n'est trouvé avec "startsWith", recherche avec "includes"
+      if (filteredResults.length === 0) {
+        filteredResults = data.filter((cocktail) => {
+          const normalizedName = normalize(cocktail.name);
+          const normalizedIngredients = cocktail.ingredients.map((ingredient) =>
+            normalize(ingredient),
+          );
+          const normalizedTaste = normalize(cocktail.taste);
+
+          // Recherche plus large avec "includes"
+          return (
+            normalizedName.includes(normalizedQuery) ||
+            normalizedIngredients.some((ingredient) =>
+              ingredient.includes(normalizedQuery),
+            ) ||
+            normalizedTaste.includes(normalizedQuery)
+          );
+        });
+      }
 
       setSearchResults(filteredResults);
     } catch (error) {
