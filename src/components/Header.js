@@ -31,7 +31,9 @@ const Header = () => {
 
   // Fonction pour récupérer les résultats de recherche
   const fetchResults = useCallback(async (query) => {
-    if (query.length === 0) {
+    const cleanedQuery = query.trim();
+
+    if (cleanedQuery.length === 0) {
       setSearchResults([]);
       return;
     }
@@ -41,10 +43,9 @@ const Header = () => {
         str
           .toLowerCase()
           .normalize("NFD")
-          .replace(/[\u0300-\u036f]/g, ""); // Supprimer les accents et mettre en minuscule
+          .replace(/[\u0300-\u036f]/g, "");
 
-      const normalizedQuery = normalize(query);
-
+      const normalizedQuery = normalize(cleanedQuery);
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/recipes/cards?search=${query}`,
       );
@@ -52,43 +53,37 @@ const Header = () => {
         throw new Error("Erreur lors de la récupération des données.");
       const data = await res.json();
 
-      // Première recherche avec "startsWith"
-      let filteredResults = data.filter((cocktail) => {
+      // Recherche avec "startsWith" et "includes"
+      const filteredResults = data.filter((cocktail) => {
         const normalizedName = normalize(cocktail.name);
         const normalizedIngredients = cocktail.ingredients.map((ingredient) =>
           normalize(ingredient),
         );
-        const normalizedTaste = normalize(cocktail.taste);
 
-        // Recherche stricte au début du nom, des ingrédients ou du goût
-        return (
+        // Vérifie si le nom ou les ingrédients commencent par la requête
+        const startsWithMatch =
           normalizedName.startsWith(normalizedQuery) ||
           normalizedIngredients.some((ingredient) =>
             ingredient.startsWith(normalizedQuery),
-          ) ||
-          normalizedTaste.startsWith(normalizedQuery)
-        );
+          );
+
+        // Vérifie si le nom ou les ingrédients contiennent la requête
+        const includesMatch =
+          normalizedName.includes(normalizedQuery) ||
+          normalizedIngredients.some((ingredient) =>
+            ingredient.includes(normalizedQuery),
+          );
+
+        // Condition d'exclusion pour "rose"
+        const shouldExcludeProsecco =
+          normalizedQuery === "rose" &&
+          normalizedIngredients.some((ingredient) =>
+            ingredient.includes("prosecco"),
+          );
+
+        // Retourne vrai si c'est un match "startsWith" ou "includes" (et pas d'exclusion)
+        return startsWithMatch || (includesMatch && !shouldExcludeProsecco);
       });
-
-      // Si aucun résultat n'est trouvé avec "startsWith", recherche avec "includes"
-      if (filteredResults.length === 0) {
-        filteredResults = data.filter((cocktail) => {
-          const normalizedName = normalize(cocktail.name);
-          const normalizedIngredients = cocktail.ingredients.map((ingredient) =>
-            normalize(ingredient),
-          );
-          const normalizedTaste = normalize(cocktail.taste);
-
-          // Recherche plus large avec "includes"
-          return (
-            normalizedName.includes(normalizedQuery) ||
-            normalizedIngredients.some((ingredient) =>
-              ingredient.includes(normalizedQuery),
-            ) ||
-            normalizedTaste.includes(normalizedQuery)
-          );
-        });
-      }
 
       setSearchResults(filteredResults);
     } catch (error) {
