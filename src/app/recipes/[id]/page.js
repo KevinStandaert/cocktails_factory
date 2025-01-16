@@ -50,7 +50,7 @@ const RecipesIdPage = async ({ params }) => {
   const backgroundImage = `url(/${cocktail.url_image})`;
 
   return (
-    <div className="container mx-auto mt-8 rounded-xl bg-serria-300 bg-opacity-10 p-6">
+    <div className="container mx-auto mt-8 rounded-xl bg-black bg-opacity-10 p-6">
       <div className="w-full text-center">
         <h1 className="mb-20 mt-10 text-center text-4xl font-bold sm:mb-36 md:text-6xl lg:mt-24">
           {cocktail.name}
@@ -63,12 +63,12 @@ const RecipesIdPage = async ({ params }) => {
             style={{ backgroundImage }}
           ></div>
           {/*second card*/}
-          <div className="h-[550px] max-h-[700px] rounded-xl bg-serria-300 bg-opacity-10 md:h-[700px]">
+          <div className="h-[550px] max-h-[700px] rounded-xl bg-black bg-opacity-10 md:h-[700px]">
             <div className="flex h-full flex-col items-start justify-between gap-1 px-4 py-6 sm:text-xl">
               <div className="ml-2 flex items-baseline sm:ml-8">
                 <h2 className="mr-2 font-bold">
                   <FontAwesomeIcon
-                    className="mr-4 text-2xl text-serria-600"
+                    className="mr-4 text-2xl text-orange-500"
                     icon={faFaceGrinTongue}
                   />
                   Goût:
@@ -79,7 +79,7 @@ const RecipesIdPage = async ({ params }) => {
               <div className="ml-2 mt-2 flex items-baseline sm:ml-8">
                 <h2 className="mr-2 font-bold">
                   <FontAwesomeIcon
-                    className="mr-4 text-2xl text-serria-600"
+                    className="mr-4 text-2xl text-orange-500"
                     icon={faMartiniGlass}
                   />
                   Verre:
@@ -90,7 +90,7 @@ const RecipesIdPage = async ({ params }) => {
               <div className="ml-2 mt-2 flex items-baseline sm:ml-8">
                 <h2 className="mr-2 font-bold">
                   <FontAwesomeIcon
-                    className="mr-4 text-2xl text-serria-600"
+                    className="mr-4 text-2xl text-orange-500"
                     icon={faGear}
                   />
                   Méthode:
@@ -101,7 +101,7 @@ const RecipesIdPage = async ({ params }) => {
               <div className="ml-2 flex flex-col flex-wrap items-start sm:ml-8 sm:flex-row sm:items-baseline">
                 <h2 className="mb-2 mr-2 font-bold sm:mb-0">
                   <FontAwesomeIcon
-                    className="mr-4 text-2xl text-serria-600"
+                    className="mr-4 text-2xl text-orange-500"
                     icon={faSpoon}
                   />
                   Ustensils:
@@ -116,7 +116,7 @@ const RecipesIdPage = async ({ params }) => {
               <div className="ml-2 mt-2 flex flex-col sm:ml-8">
                 <h2 className="mr-2 flex font-bold">
                   <FontAwesomeIcon
-                    className="mr-4 text-2xl text-serria-600"
+                    className="mr-4 text-2xl text-orange-500"
                     icon={faWineBottle}
                   />
                   Ingrédients:
@@ -135,10 +135,10 @@ const RecipesIdPage = async ({ params }) => {
             </div>
           </div>
           {/*third card*/}
-          <div className="flex h-[550px] max-h-[700px] flex-col items-center rounded-xl bg-serria-300 bg-opacity-10 px-2 md:h-[700px]">
+          <div className="flex h-[550px] max-h-[700px] flex-col items-center rounded-xl bg-black bg-opacity-10 px-2 md:h-[700px]">
             <div className="mb-6 mt-8 flex text-center text-xl font-bold sm:text-3xl">
               <h2>
-                <strong className="text-serria-600">Préparation </strong>du
+                <strong className="text-orange-500">Préparation </strong>du
                 cocktail {cocktail.name}
               </h2>
             </div>
@@ -154,9 +154,9 @@ const RecipesIdPage = async ({ params }) => {
             </div>
           </div>
           {/*fourth card*/}
-          <div className="flex h-[550px] max-h-[700px] flex-col items-center rounded-xl bg-serria-300 bg-opacity-10 px-2 md:h-[700px]">
+          <div className="flex h-[550px] max-h-[700px] flex-col items-center rounded-xl bg-black bg-opacity-10 px-2 md:h-[700px]">
             <h2 className="mb-6 mt-8 flex text-xl font-bold sm:text-3xl">
-              <strong className="text-serria-600">Les conseils</strong>&nbsp;du
+              <strong className="text-orange-500">Les conseils</strong>&nbsp;du
               pro
             </h2>
 
@@ -167,10 +167,10 @@ const RecipesIdPage = async ({ params }) => {
             </div>
           </div>
           {/*fifth card*/}
-          <div className="flex h-[550px] max-h-[550px] flex-col items-center rounded-xl bg-serria-300 bg-opacity-10 px-2 lg:col-span-2">
+          <div className="flex h-[550px] max-h-[550px] flex-col items-center rounded-xl bg-black bg-opacity-10 px-2 lg:col-span-2">
             <div className="mb-6 mt-8 flex text-center text-xl font-bold sm:text-3xl">
               <h2>
-                <strong className="text-serria-600">Historique</strong>
+                <strong className="text-orange-500">Historique</strong>
                 &nbsp;du&nbsp;
                 {cocktail.name}
               </h2>

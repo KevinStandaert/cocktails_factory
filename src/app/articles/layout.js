@@ -11,7 +11,7 @@ export default function ArticlesLayout({ children }) {
         </h3>
         <h3 className="mb-20 md:self-end text-wrap lg:mx-40 text-sm sm:mb-36 md:text-base lg:text-xl">
           Élevez vos sens,{" "}
-          <strong className="text-serria-600">
+          <strong className="text-orange-500">
             une connaissance à la fois
           </strong>
           ...

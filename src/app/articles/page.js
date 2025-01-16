@@ -31,7 +31,7 @@ const Articles = () => {
         <div className="grid gap-20 md:grid-cols-2 lg:grid-cols-3">
           <Link
             href={"/articles/materials"}
-            className="mx-10 flex h-[500px] w-72 flex-col items-center justify-between rounded-xl bg-serria-300 bg-opacity-10 px-1 sm:-mx-2 sm:w-64"
+            className="mx-10 flex h-[500px] w-72 flex-col items-center justify-between rounded-xl bg-black bg-opacity-10 px-1 sm:-mx-2 sm:w-64"
           >
             <Image
               src={"/materiels.webp"}
@@ -40,14 +40,14 @@ const Articles = () => {
               height={200}
               className="mb-6 mt-6 h-40 w-auto rounded-xl shadow-xl shadow-black sm:h-52"
             />
-            <h2 className="font-bold text-serria-600 sm:text-2xl">Le materiels</h2>
+            <h2 className="font-bold text-orange-500 sm:text-2xl">Le materiels</h2>
             <div className="relative my-2 flex h-full items-center justify-center">
               <p className="text-pretty text-xs p-2 sm:text-sm">Toutes les informations essentielles à connaître sur les différents outils du barman.</p>
             </div>
           </Link>
           <Link
             href={"/articles/ingredients"}
-            className="mx-10 flex h-[500px] w-72 flex-col items-center justify-between rounded-xl bg-serria-300 bg-opacity-10 px-1 sm:-mx-2 sm:w-64"
+            className="mx-10 flex h-[500px] w-72 flex-col items-center justify-between rounded-xl bg-black bg-opacity-10 px-1 sm:-mx-2 sm:w-64"
           >
             <Image
               src={"/ingredients.webp"}
@@ -56,7 +56,7 @@ const Articles = () => {
               height={200}
               className="mb-6 mt-6 h-40 w-auto rounded-xl shadow-xl shadow-black sm:h-52"
             />
-            <h2 className="font-bold text-serria-600 sm:text-2xl">
+            <h2 className="font-bold text-orange-500 sm:text-2xl">
               Les ingrédients
             </h2>
             <div className="relative my-2 flex h-full items-center justify-center">
@@ -65,7 +65,7 @@ const Articles = () => {
           </Link>
           <Link
             href={"/articles/techniques"}
-            className="mx-10 flex h-[500px] w-72 flex-col items-center justify-between rounded-xl bg-serria-300 bg-opacity-10 px-1 sm:-mx-2 sm:w-64"
+            className="mx-10 flex h-[500px] w-72 flex-col items-center justify-between rounded-xl bg-black bg-opacity-10 px-1 sm:-mx-2 sm:w-64"
           >
             <Image
               src={"/techniques.webp"}
@@ -74,7 +74,7 @@ const Articles = () => {
               height={200}
               className="mb-6 mt-6 h-40 w-auto rounded-xl shadow-xl shadow-black sm:h-52"
             />
-            <h2 className="font-bold text-serria-600 sm:text-2xl">
+            <h2 className="font-bold text-orange-500 sm:text-2xl">
               Les techniques
             </h2>
             <div className="relative my-2 flex h-full items-center justify-center">

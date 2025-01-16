@@ -43,14 +43,14 @@ const SearchModal = ({
             onClose();
             clearSearch(); // Efface la barre de recherche
           }}
-          className="absolute right-2 top-0 p-1 text-4xl text-serria-600"
+          className="absolute right-2 top-0 p-1 text-4xl text-orange-500"
         >
           ×
         </button>
         <div className="p-4">
           <h2 className="mb-4 text-xl font-bold">
             Résultats de recherche pour :{" "}
-            <span className="text-serria-600">{query}</span>
+            <span className="text-orange-500">{query}</span>
           </h2>
           {searchResults && searchResults.length > 0 ? (
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -72,7 +72,7 @@ const SearchModal = ({
                     height={200}
                     className="mb-4 h-40 w-auto rounded-xl shadow-xl"
                   />
-                  <h3 className="text-lg font-bold text-serria-600">
+                  <h3 className="text-lg font-bold text-orange-500">
                     {cocktail.name}
                   </h3>
                 </Link>

@@ -41,7 +41,7 @@ export default function RootLayout({ children }) {
       <GoogleTagManager gtmId="GTM-WJQBZ8B5" />
 
       <body
-        className={`${roboto.className} bg-gradient-to-r from-metal-600 to-black text-gray-100`}
+        className={`${roboto.className} bg-gradient-to-r from-metal-600 to-metal-900 text-gray-100`}
       >
         <noscript>
           <iframe

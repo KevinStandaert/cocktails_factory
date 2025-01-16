@@ -36,7 +36,7 @@ const Recipes = () => {
         </h1>
         <h2 className="mb-20 self-end text-nowrap text-sm sm:mb-36 md:text-base lg:text-xl">
           Élevez vos sens,{" "}
-          <strong className="text-serria-500">une recette à la fois</strong>...
+          <strong className="text-orange-500">une recette à la fois</strong>...
         </h2>
         <div className="grid gap-20 md:grid-cols-2 xl:grid-cols-3">
           <CocktailCard dataUrl={dataUrl} />

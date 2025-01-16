@@ -40,7 +40,7 @@ const MaterialsIdPage = async ({ params }) => {
   const material = await fetchMaterial(id);
 
   return (
-    <div className="container mx-auto mt-8 rounded-xl bg-serria-300 bg-opacity-10 p-6">
+    <div className="container mx-auto mt-8 rounded-xl bg-black bg-opacity-10 p-6">
       <div className="w-full text-center">
         <h1 className="mb-20 mt-10 text-4xl font-bold sm:mb-36 md:text-6xl lg:mt-24">
           {material.name}
@@ -54,10 +54,10 @@ const MaterialsIdPage = async ({ params }) => {
           ></div>
 
           {/*second card*/}
-          <div className="flex h-[250px] flex-col items-center overflow-hidden rounded-xl bg-serria-300 bg-opacity-10 px-2 md:h-[450px] lg:h-[500px] xl:h-[700px]">
+          <div className="flex h-[250px] flex-col items-center overflow-hidden rounded-xl bg-black bg-opacity-10 px-2 md:h-[450px] lg:h-[500px] xl:h-[700px]">
             <div className="mb-4 mt-6 flex font-bold sm:mb-6 sm:mt-8 sm:text-3xl">
               <h2>
-                <strong className="text-serria-600">Qu&apos;est-ce</strong>
+                <strong className="text-orange-500">Qu&apos;est-ce</strong>
                 &nbsp;que c&apos;est ?
               </h2>
             </div>
@@ -70,11 +70,11 @@ const MaterialsIdPage = async ({ params }) => {
           </div>
 
           {/*third card*/}
-          <div className="flex h-[250px] flex-col items-center overflow-hidden rounded-xl bg-serria-300 bg-opacity-10 px-2 md:h-[450px] lg:h-[500px] xl:h-[700px]">
+          <div className="flex h-[250px] flex-col items-center overflow-hidden rounded-xl bg-black bg-opacity-10 px-2 md:h-[450px] lg:h-[500px] xl:h-[700px]">
             <div className="mb-4 mt-6 flex font-bold sm:mb-6 sm:mt-8 sm:text-3xl">
               <h2>
                 Comment l&apos;
-                <strong className="text-serria-600">utiliser</strong>&nbsp;?
+                <strong className="text-orange-500">utiliser</strong>&nbsp;?
               </h2>
             </div>
 
@@ -98,11 +98,11 @@ const MaterialsIdPage = async ({ params }) => {
           ></div>
 
           {/*sixth card*/}
-          <div className="flex h-[250px] flex-col items-center overflow-hidden rounded-xl bg-serria-300 bg-opacity-10 px-2 md:h-[450px] lg:h-[500px] xl:h-[700px]">
+          <div className="flex h-[250px] flex-col items-center overflow-hidden rounded-xl bg-black bg-opacity-10 px-2 md:h-[450px] lg:h-[500px] xl:h-[700px]">
             <div className="mb-4 mt-6 flex font-bold sm:mb-6 sm:mt-8 sm:text-3xl">
               <h2>
                 Et si j&apos;
-                <strong className="text-serria-600">en ai pas</strong>&nbsp;?
+                <strong className="text-orange-500">en ai pas</strong>&nbsp;?
               </h2>
             </div>
 
