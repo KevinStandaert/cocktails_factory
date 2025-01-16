@@ -62,7 +62,7 @@ const SearchModal = ({
                     onClose();
                     clearSearch(); // Efface la barre de recherche
                   }}
-                  className="flex flex-col items-center justify-between rounded-xl bg-serria-300 bg-opacity-10 p-4"
+                  className="flex flex-col items-center justify-between rounded-xl bg-orange-500 bg-opacity-10 p-4"
                 >
                   <Image
                     src={`/${cocktail.url_image}`}
