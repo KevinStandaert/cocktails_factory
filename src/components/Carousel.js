@@ -40,7 +40,7 @@ const Carousel = ({ dataUrl }) => {
       >
         <FontAwesomeIcon
           icon={faArrowLeft}
-          className="h-8 w-8 text-metal-950"
+          className="h-8 w-8 text-white"
         />
       </button>
       <div className="relative flex h-[500px] w-[350px] items-center justify-center overflow-hidden sm:w-[600px]">
@@ -109,7 +109,7 @@ const Carousel = ({ dataUrl }) => {
       >
         <FontAwesomeIcon
           icon={faArrowRight}
-          className="h-8 w-8 text-metal-300 sm:text-metal-950"
+          className="h-8 w-8 text-white "
         />
       </button>
     </div>
