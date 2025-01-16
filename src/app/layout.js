@@ -1,12 +1,17 @@
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "../components/Footer";
-import { Roboto_Mono } from "next/font/google";
+import { Nunito } from "next/font/google";
 import AgeConfirmationModal from "../components/AgeConfirmationModal";
 import { Analytics } from "@vercel/analytics/react";
 import { GoogleTagManager } from "@next/third-parties/google";
 
-const roboto = Roboto_Mono({ subsets: ["latin"] });
+const nunito = Nunito({
+  subsets: ["latin"],
+  weight: ["400","900"],
+  style: ["normal"],
+  sizing: ["auto"],
+});
 
 export const metadata = {
   title: {
@@ -41,7 +46,7 @@ export default function RootLayout({ children }) {
       <GoogleTagManager gtmId="GTM-WJQBZ8B5" />
 
       <body
-        className={`${roboto.className} bg-gradient-to-r from-metal-600 to-black text-gray-100`}
+        className={`${nunito.className} bg-gradient-to-r from-metal-600 to-metal-900 text-gray-100`}
       >
         <noscript>
           <iframe
@@ -49,7 +54,7 @@ export default function RootLayout({ children }) {
             height="0"
             width="0"
             style={{ display: "none", visibility: "hidden" }}
-           ></iframe>
+          ></iframe>
         </noscript>
 
         <Header />

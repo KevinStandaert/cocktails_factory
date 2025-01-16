@@ -19,7 +19,7 @@ const CocktailCard = ({ dataUrl }) => {
     <Link
       href={`/recipes/${cocktail.id}`}
       key={cocktail.id}
-      className="mx-10 flex h-[500px] w-72 flex-col items-center justify-between rounded-xl bg-serria-300 bg-opacity-10 px-1 sm:-mx-2 sm:w-64"
+      className="mx-10 flex h-[500px] w-72 flex-col items-center justify-between rounded-xl bg-black bg-opacity-10 px-1 sm:-mx-2 sm:w-64"
     >
       <Image
         src={`/${cocktail.url_image}`}
@@ -29,7 +29,7 @@ const CocktailCard = ({ dataUrl }) => {
         height={200}
         className="mt-6 h-40 w-auto rounded-xl mb-6 shadow-xl shadow-black sm:h-52"
       />
-      <h2 className="font-bold text-serria-600 sm:text-2xl">{cocktail.name}</h2>
+      <h2 className="font-bold text-orange-500 sm:text-2xl">{cocktail.name}</h2>
       <div className="relative my-2 flex h-full items-center justify-center">
         <p className="text-center text-xs sm:text-sm">
           {cocktail.ingredients.join(", ")}

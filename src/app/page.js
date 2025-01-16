@@ -11,8 +11,8 @@ export default function Home() {
           Découvrez l&apos;Art du Cocktail avec
         </h2>
         <h1 className="text-2xl font-bold md:text-6xl">
-          COC<strong className="text-serria-600">K</strong>TAIL
-          <strong className="text-serria-600">S</strong> FACTORY
+          COC<strong className="text-orange-500">K</strong>TAIL
+          <strong className="text-orange-500">S</strong> FACTORY
         </h1>
         <h2 className="ms:mt-8 mt-6 text-xs md:px-24 sm:text-lg">
           Bienvenue sur Cocktails Factory, votre destination ultime pour
@@ -23,20 +23,20 @@ export default function Home() {
         </h2>
       </div>
       <h3 className="-mb-20 mt-20 sm:mt-36 sm:text-3xl">
-        <strong className="font-bold text-serria-600">Inspirations</strong> du
+        <strong className="font-bold text-orange-500">Inspirations</strong> du
         moments
       </h3>
       <Carousel dataUrl={dataUrl}/>
 
-      <div className="mb-20 flex max-w-[1920px] flex-col rounded-xl bg-serria-300 bg-opacity-10 px-8 py-10 text-xs sm:py-20 sm:text-lg">
+      <div className="mb-20 flex max-w-[1920px] flex-col rounded-xl bg-black bg-opacity-10 px-8 py-10 text-xs sm:py-20 sm:text-lg">
         <h3 className="mb-8 self-start text-base sm:text-3xl">
           Ce que nous vous
-          <strong className="font-bold text-serria-600"> offrons</strong>
+          <strong className="font-bold text-orange-500"> offrons</strong>
         </h3>
         <ul className="flex flex-col gap-6">
           <li>
             <Link
-              className="py-6 font-bold text-serria-600 transition-all hover:text-serria-400 active:text-serria-800"
+              className="py-6 font-bold text-orange-500 transition-all hover:text-serria-400 active:text-serria-800"
               href="/recipes"
             >
               Recettes Authentiques et Innovantes
@@ -47,7 +47,7 @@ export default function Home() {
           </li>
           <li>
             <Link
-              className="py-6 font-bold text-serria-600 transition-all hover:text-serria-400 active:text-serria-800"
+              className="py-6 font-bold text-orange-500 transition-all hover:text-serria-400 active:text-serria-800"
               href="/articles"
             >
               Guides et Astuces
@@ -58,7 +58,7 @@ export default function Home() {
           </li>
           <li>
             <Link
-              className="py-6 font-bold text-serria-600 transition-all hover:text-serria-400 active:text-serria-800"
+              className="py-6 font-bold text-orange-500 transition-all hover:text-serria-400 active:text-serria-800"
               href="/articles"
             >
               Exploration des Ingrédients
@@ -68,15 +68,15 @@ export default function Home() {
           </li>
         </ul>
       </div>
-      <div className="mb-20 flex max-w-[1920px] flex-col rounded-xl bg-serria-300 bg-opacity-10 px-8 py-10 text-xs sm:py-20 sm:text-lg">
+      <div className="mb-20 flex max-w-[1920px] flex-col rounded-xl bg-black bg-opacity-10 px-8 py-10 text-xs sm:py-20 sm:text-lg">
         <h3 className="mb-8 self-start text-base sm:text-3xl">
-          <strong className="font-bold text-serria-600">Pourquoi </strong> nous
+          <strong className="font-bold text-orange-500">Pourquoi </strong> nous
           choisir ?
         </h3>
         <ul className="flex flex-col gap-6">
           <li>
-            Chez Coc<span className="font-bold text-serria-600">k</span>tail
-            <span className="font-bold text-serria-600">s </span> Factory, nous
+            Chez Coc<span className="font-bold text-orange-500">k</span>tail
+            <span className="font-bold text-orange-500">s </span> Factory, nous
             célébrons l&apos;art du cocktail avec passion et dévotion. Notre
             mission est de vous inspirer à créer des moments mémorables autour
             de boissons savoureuses et élégantes. Rejoignez notre communauté et
@@ -85,24 +85,24 @@ export default function Home() {
           </li>
           <li>
             Explorez, apprenez, créez et partagez votre amour pour les cocktails
-            avec Coc<span className="font-bold text-serria-600">k</span>
-            tail<span className="font-bold text-serria-600">s </span> Factory.
+            avec Coc<span className="font-bold text-orange-500">k</span>
+            tail<span className="font-bold text-orange-500">s </span> Factory.
           </li>
         </ul>
       </div>
-      <div className="mb-20 flex max-w-[1920px] flex-col rounded-xl bg-serria-300 bg-opacity-10 px-8 py-10 text-xs sm:py-20 sm:text-lg">
+      <div className="mb-20 flex max-w-[1920px] flex-col rounded-xl bg-black bg-opacity-10 px-8 py-10 text-xs sm:py-20 sm:text-lg">
         <h3 className="mb-8 self-start text-base sm:text-3xl">
           Notre
-          <strong className="font-bold text-serria-600"> Engagement </strong>
+          <strong className="font-bold text-orange-500"> Engagement </strong>
           envers la Qualité
         </h3>
         <ul className="flex flex-col gap-6">
           <li>
-            La<strong className="font-bold text-serria-600"> qualité </strong>
+            La<strong className="font-bold text-orange-500"> qualité </strong>
             est au coeur de tout ce que nous faisons. Nous nous engageons à vous
             offrir des recettes de cocktails de la plus haute qualité, élaborées
             avec des ingrédients soigneusement sélectionnés et testées par nos
-            <strong className="font-bold text-serria-600">
+            <strong className="font-bold text-orange-500">
               {" "}
               experts en mixologie
             </strong>
@@ -113,7 +113,7 @@ export default function Home() {
           <li>
             Rejoignez-nous dans cette quête de l&apos;excellence et découvrez la
             différence qu&apos;une approche axée sur la qualité peut faire dans
-            <strong className="font-bold text-serria-600">
+            <strong className="font-bold text-orange-500">
               {" "}
               l&apos;art de la mixologie
             </strong>
