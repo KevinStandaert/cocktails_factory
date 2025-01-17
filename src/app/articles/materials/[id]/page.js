@@ -49,12 +49,12 @@ const MaterialsIdPage = async ({ params }) => {
         <div className="grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:grid-rows-3 lg:gap-20">
           {/*first card*/}
           <div
-            className="h-[250px] rounded-xl bg-cover bg-center shadow-xl shadow-black md:h-[450px] lg:h-[500px] xl:h-[700px]"
+            className="h-[250px] rounded-xl bg-cover bg-center shadow-xl shadow-black brightness-95 transition-all duration-700 hover:brightness-110 md:h-[450px] lg:h-[500px] xl:h-[700px]"
             style={{ backgroundImage: `url(/${material.url_image_1})` }}
           ></div>
 
           {/*second card*/}
-          <div className="flex h-[250px] flex-col items-center overflow-hidden rounded-xl bg-black bg-opacity-10 px-2 md:h-[450px] lg:h-[500px] xl:h-[700px]">
+          <div className="flex h-[250px] flex-col items-center overflow-hidden rounded-xl bg-black bg-opacity-10 px-2 transition-all duration-700 hover:bg-opacity-30 md:h-[450px] lg:h-[500px] xl:h-[700px]">
             <div className="mb-4 mt-6 flex font-bold sm:mb-6 sm:mt-8 sm:text-3xl">
               <h2>
                 <strong className="text-orange-500">Qu&apos;est-ce</strong>
@@ -70,7 +70,7 @@ const MaterialsIdPage = async ({ params }) => {
           </div>
 
           {/*third card*/}
-          <div className="flex h-[250px] flex-col items-center overflow-hidden rounded-xl bg-black bg-opacity-10 px-2 md:h-[450px] lg:h-[500px] xl:h-[700px]">
+          <div className="flex h-[250px] flex-col items-center overflow-hidden rounded-xl bg-black bg-opacity-10 px-2 transition-all duration-700 hover:bg-opacity-30 md:h-[450px] lg:h-[500px] xl:h-[700px]">
             <div className="mb-4 mt-6 flex font-bold sm:mb-6 sm:mt-8 sm:text-3xl">
               <h2>
                 Comment l&apos;
@@ -87,18 +87,18 @@ const MaterialsIdPage = async ({ params }) => {
 
           {/*fourth card*/}
           <div
-            className="row-start-3 h-[250px] rounded-xl bg-cover bg-center shadow-xl shadow-black md:h-[450px] lg:h-[500px] xl:h-[700px]"
+            className="row-start-3 h-[250px] rounded-xl bg-cover bg-center shadow-xl shadow-black brightness-95 transition-all duration-700 hover:brightness-110 md:h-[450px] lg:h-[500px] xl:h-[700px]"
             style={{ backgroundImage: `url(/${material.url_image_2})` }}
           ></div>
 
           {/*fifth card*/}
           <div
-            className="h-[250px] rounded-xl bg-cover bg-center shadow-xl shadow-black md:h-[450px] lg:h-[500px] xl:h-[700px]"
+            className="h-[250px] rounded-xl bg-cover bg-center shadow-xl shadow-black brightness-95 transition-all duration-700 hover:brightness-110 md:h-[450px] lg:h-[500px] xl:h-[700px]"
             style={{ backgroundImage: `url(/${material.url_image_3})` }}
           ></div>
 
           {/*sixth card*/}
-          <div className="flex h-[250px] flex-col items-center overflow-hidden rounded-xl bg-black bg-opacity-10 px-2 md:h-[450px] lg:h-[500px] xl:h-[700px]">
+          <div className="flex h-[250px] flex-col items-center overflow-hidden rounded-xl bg-black bg-opacity-10 px-2 transition-all duration-700 hover:bg-opacity-30 md:h-[450px] lg:h-[500px] xl:h-[700px]">
             <div className="mb-4 mt-6 flex font-bold sm:mb-6 sm:mt-8 sm:text-3xl">
               <h2>
                 Et si j&apos;
