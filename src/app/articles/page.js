@@ -31,14 +31,14 @@ const Articles = () => {
         <div className="grid gap-20 md:grid-cols-2 lg:grid-cols-3">
           <Link
             href={"/articles/materials"}
-            className="mx-10 flex h-[500px] w-72 flex-col items-center justify-between rounded-xl bg-black bg-opacity-10 px-1 sm:-mx-2 sm:w-64"
+            className="group mx-10 flex h-[500px] w-72 flex-col items-center justify-between rounded-xl bg-black bg-opacity-10 px-1 transition-all duration-700 hover:bg-opacity-30 sm:-mx-2 sm:w-64"
           >
             <Image
               src={"/materiels.webp"}
               alt={"materiels du barman"}
               width={250}
               height={200}
-              className="mb-6 mt-6 h-40 w-auto rounded-xl shadow-xl shadow-black brightness-95 transition-all duration-700 hover:rotate-2 hover:scale-105 hover:brightness-110 sm:h-52"
+              className="mb-6 mt-6 h-40 w-auto rounded-xl shadow-xl shadow-black brightness-95 transition-all duration-700 group-hover:rotate-2 group-hover:scale-105 group-hover:brightness-110 sm:h-52"
             />
             <h2 className="font-bold text-orange-500 sm:text-2xl">
               Le materiels
@@ -52,14 +52,14 @@ const Articles = () => {
           </Link>
           <Link
             href={"/articles/ingredients"}
-            className="mx-10 flex h-[500px] w-72 flex-col items-center justify-between rounded-xl bg-black bg-opacity-10 px-1 sm:-mx-2 sm:w-64"
+            className="group mx-10 flex h-[500px] w-72 flex-col items-center justify-between rounded-xl bg-black bg-opacity-10 px-1 transition-all duration-700 hover:bg-opacity-30 sm:-mx-2 sm:w-64"
           >
             <Image
               src={"/ingredients.webp"}
               alt={"les ingrédients du barman"}
               width={250}
               height={200}
-              className="mb-6 mt-6 h-40 w-auto rounded-xl shadow-xl shadow-black brightness-95 transition-all duration-700 hover:rotate-2 hover:scale-105 hover:brightness-110 sm:h-52"
+              className="mb-6 mt-6 h-40 w-auto rounded-xl shadow-xl shadow-black brightness-95 transition-all duration-700 group-hover:rotate-2 group-hover:scale-105 group-hover:brightness-110 sm:h-52"
             />
             <h2 className="font-bold text-orange-500 sm:text-2xl">
               Les ingrédients
@@ -73,14 +73,14 @@ const Articles = () => {
           </Link>
           <Link
             href={"/articles/techniques"}
-            className="mx-10 flex h-[500px] w-72 flex-col items-center justify-between rounded-xl bg-black bg-opacity-10 px-1 sm:-mx-2 sm:w-64"
+            className="group mx-10 flex h-[500px] w-72 flex-col items-center justify-between rounded-xl bg-black bg-opacity-10 px-1 transition-all duration-700 hover:bg-opacity-30 sm:-mx-2 sm:w-64"
           >
             <Image
               src={"/techniques.webp"}
               alt={"technique de cocktail"}
               width={250}
               height={200}
-              className="mb-6 mt-6 h-40 w-auto rounded-xl shadow-xl shadow-black brightness-95 transition-all duration-700 hover:rotate-2 hover:scale-105 hover:brightness-110 sm:h-52"
+              className="mb-6 mt-6 h-40 w-auto rounded-xl shadow-xl shadow-black brightness-95 transition-all duration-700 group-hover:rotate-2 group-hover:scale-105 group-hover:brightness-110 sm:h-52"
             />
             <h2 className="font-bold text-orange-500 sm:text-2xl">
               Les techniques
