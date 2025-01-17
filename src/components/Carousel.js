@@ -88,7 +88,7 @@ const Carousel = ({ dataUrl }) => {
                   alt={cocktail.name}
                   width={250}
                   height={200}
-                  className="h-36 w-auto rounded-xl shadow-xl shadow-black brightness-95 transition-all duration-700 hover:scale-105 hover:brightness-110 sm:h-48"
+                  className="h-36 w-auto rounded-xl shadow-xl shadow-black brightness-95 transition-all duration-700 hover:rotate-2 hover:scale-105 hover:brightness-110 sm:h-48"
                 />
                 <h2 className="text-center font-bold text-orange-500 sm:text-2xl">
                   {cocktail.name}

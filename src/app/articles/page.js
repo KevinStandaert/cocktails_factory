@@ -38,7 +38,7 @@ const Articles = () => {
               alt={"materiels du barman"}
               width={250}
               height={200}
-              className="mb-6 mt-6 h-40 w-auto rounded-xl shadow-xl shadow-black brightness-95 transition-all duration-700 hover:scale-110 hover:brightness-110 sm:h-52"
+              className="mb-6 mt-6 h-40 w-auto rounded-xl shadow-xl shadow-black brightness-95 transition-all duration-700 hover:rotate-2 hover:scale-105 hover:brightness-110 sm:h-52"
             />
             <h2 className="font-bold text-orange-500 sm:text-2xl">
               Le materiels
@@ -59,7 +59,7 @@ const Articles = () => {
               alt={"les ingrédients du barman"}
               width={250}
               height={200}
-              className="mb-6 mt-6 h-40 w-auto rounded-xl shadow-xl shadow-black brightness-95 transition-all duration-700 hover:scale-110 hover:brightness-110 sm:h-52"
+              className="mb-6 mt-6 h-40 w-auto rounded-xl shadow-xl shadow-black brightness-95 transition-all duration-700 hover:rotate-2 hover:scale-105 hover:brightness-110 sm:h-52"
             />
             <h2 className="font-bold text-orange-500 sm:text-2xl">
               Les ingrédients
@@ -80,7 +80,7 @@ const Articles = () => {
               alt={"technique de cocktail"}
               width={250}
               height={200}
-              className="mb-6 mt-6 h-40 w-auto rounded-xl shadow-xl shadow-black brightness-95 transition-all duration-700 hover:scale-110 hover:brightness-110 sm:h-52"
+              className="mb-6 mt-6 h-40 w-auto rounded-xl shadow-xl shadow-black brightness-95 transition-all duration-700 hover:rotate-2 hover:scale-105 hover:brightness-110 sm:h-52"
             />
             <h2 className="font-bold text-orange-500 sm:text-2xl">
               Les techniques
