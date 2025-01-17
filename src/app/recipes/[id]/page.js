@@ -12,7 +12,7 @@ import {
 async function fetchCocktail(id) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/recipes/${id}`);
   if (!res.ok) {
-    throw new Error('Erreur de chargement des données');
+    throw new Error("Erreur de chargement des données");
   }
   return res.json();
 }
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }) {
       canonical: `https://cocktails-factory.vercel.app/recipes/${params.id}`,
     },
     openGraph: {
-      type: 'website',
+      type: "website",
       url: `https://cocktails-factory.vercel.app/recipes/${params.id}`,
       title: `Recette de ${cocktail.name} | Cocktails Factory - Fabrique à Cocktails`,
       description: `Découvrez comment réaliser la recette de ${cocktail.name} avec ${cocktail.ingredients.length} ingrédients grâce à cocktails factory !`,
@@ -59,11 +59,11 @@ const RecipesIdPage = async ({ params }) => {
         <div className="grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:grid-rows-3 lg:gap-20">
           {/*first card*/}
           <div
-            className="h-[550px] max-h-[700px] w-full rounded-xl bg-cover bg-center shadow-xl shadow-black md:h-[700px]"
+            className="h-[550px] max-h-[700px] w-full rounded-xl bg-cover bg-center shadow-xl shadow-black brightness-95 transition-all duration-700 hover:brightness-110 md:h-[700px]"
             style={{ backgroundImage }}
           ></div>
           {/*second card*/}
-          <div className="h-[550px] max-h-[700px] rounded-xl bg-black bg-opacity-10 md:h-[700px]">
+          <div className="h-[550px] max-h-[700px] rounded-xl bg-black bg-opacity-10 transition-all duration-700 hover:bg-opacity-30 md:h-[700px]">
             <div className="flex h-full flex-col items-start justify-between gap-1 px-4 py-6 sm:text-xl">
               <div className="ml-2 flex items-baseline sm:ml-8">
                 <h2 className="mr-2 font-bold">
@@ -135,7 +135,7 @@ const RecipesIdPage = async ({ params }) => {
             </div>
           </div>
           {/*third card*/}
-          <div className="flex h-[550px] max-h-[700px] flex-col items-center rounded-xl bg-black bg-opacity-10 px-2 md:h-[700px]">
+          <div className="flex h-[550px] max-h-[700px] flex-col items-center rounded-xl bg-black bg-opacity-10 px-2 transition-all duration-700 hover:bg-opacity-30 md:h-[700px]">
             <div className="mb-6 mt-8 flex text-center text-xl font-bold sm:text-3xl">
               <h2>
                 <strong className="text-orange-500">Préparation </strong>du
@@ -154,7 +154,7 @@ const RecipesIdPage = async ({ params }) => {
             </div>
           </div>
           {/*fourth card*/}
-          <div className="flex h-[550px] max-h-[700px] flex-col items-center rounded-xl bg-black bg-opacity-10 px-2 md:h-[700px]">
+          <div className="flex h-[550px] max-h-[700px] flex-col items-center rounded-xl bg-black bg-opacity-10 px-2 transition-all duration-700 hover:bg-opacity-30 md:h-[700px]">
             <h2 className="mb-6 mt-8 flex text-xl font-bold sm:text-3xl">
               <strong className="text-orange-500">Les conseils</strong>&nbsp;du
               pro
@@ -167,7 +167,7 @@ const RecipesIdPage = async ({ params }) => {
             </div>
           </div>
           {/*fifth card*/}
-          <div className="flex h-[550px] max-h-[550px] flex-col items-center rounded-xl bg-black bg-opacity-10 px-2 lg:col-span-2">
+          <div className="flex h-[550px] max-h-[550px] flex-col items-center rounded-xl bg-black bg-opacity-10 px-2 transition-all duration-700 hover:bg-opacity-30 lg:col-span-2">
             <div className="mb-6 mt-8 flex text-center text-xl font-bold sm:text-3xl">
               <h2>
                 <strong className="text-orange-500">Historique</strong>

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Home() {
   const dataUrl = "/recipes/cards/random";
-  
+
   return (
     <div className="flex min-h-screen flex-col items-center p-12 md:p-36">
       <div className="flex flex-col gap-2 text-center">
@@ -14,7 +14,7 @@ export default function Home() {
           COC<strong className="text-orange-500">K</strong>TAIL
           <strong className="text-orange-500">S</strong> FACTORY
         </h1>
-        <h2 className="ms:mt-8 mt-6 text-xs md:px-24 sm:text-lg">
+        <h2 className="ms:mt-8 mt-6 text-xs sm:text-lg md:px-24">
           Bienvenue sur Cocktails Factory, votre destination ultime pour
           explorer et apprécier l&apos;art exquis des cocktails. Que vous soyez
           un amateur passionné ou un curieux désireux d&apos;explorer de
@@ -26,9 +26,9 @@ export default function Home() {
         <strong className="font-bold text-orange-500">Inspirations</strong> du
         moments
       </h3>
-      <Carousel dataUrl={dataUrl}/>
+      <Carousel dataUrl={dataUrl} />
 
-      <div className="mb-20 flex max-w-[1920px] flex-col rounded-xl bg-black bg-opacity-10 px-8 py-10 text-xs sm:py-20 sm:text-lg">
+      <div className="mb-20 flex max-w-[1920px] flex-col rounded-xl bg-black bg-opacity-10 px-8 py-10 text-xs transition-all duration-700 hover:bg-opacity-30 sm:py-20 sm:text-lg">
         <h3 className="mb-8 self-start text-base sm:text-3xl">
           Ce que nous vous
           <strong className="font-bold text-orange-500"> offrons</strong>
@@ -68,7 +68,7 @@ export default function Home() {
           </li>
         </ul>
       </div>
-      <div className="mb-20 flex max-w-[1920px] flex-col rounded-xl bg-black bg-opacity-10 px-8 py-10 text-xs sm:py-20 sm:text-lg">
+      <div className="mb-20 flex max-w-[1920px] flex-col rounded-xl bg-black bg-opacity-10 px-8 py-10 text-xs transition-all duration-700 hover:bg-opacity-30 sm:py-20 sm:text-lg">
         <h3 className="mb-8 self-start text-base sm:text-3xl">
           <strong className="font-bold text-orange-500">Pourquoi </strong> nous
           choisir ?
@@ -90,7 +90,7 @@ export default function Home() {
           </li>
         </ul>
       </div>
-      <div className="mb-20 flex max-w-[1920px] flex-col rounded-xl bg-black bg-opacity-10 px-8 py-10 text-xs sm:py-20 sm:text-lg">
+      <div className="mb-20 flex max-w-[1920px] flex-col rounded-xl bg-black bg-opacity-10 px-8 py-10 text-xs transition-all duration-700 hover:bg-opacity-30 sm:py-20 sm:text-lg">
         <h3 className="mb-8 self-start text-base sm:text-3xl">
           Notre
           <strong className="font-bold text-orange-500"> Engagement </strong>

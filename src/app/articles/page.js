@@ -38,11 +38,16 @@ const Articles = () => {
               alt={"materiels du barman"}
               width={250}
               height={200}
-              className="mb-6 mt-6 h-40 w-auto rounded-xl shadow-xl shadow-black sm:h-52"
+              className="mb-6 mt-6 h-40 w-auto rounded-xl shadow-xl shadow-black brightness-95 transition-all duration-700 hover:scale-110 hover:brightness-110 sm:h-52"
             />
-            <h2 className="font-bold text-orange-500 sm:text-2xl">Le materiels</h2>
+            <h2 className="font-bold text-orange-500 sm:text-2xl">
+              Le materiels
+            </h2>
             <div className="relative my-2 flex h-full items-center justify-center">
-              <p className="text-pretty text-xs p-2 sm:text-sm">Toutes les informations essentielles à connaître sur les différents outils du barman.</p>
+              <p className="text-pretty p-2 text-xs sm:text-sm">
+                Toutes les informations essentielles à connaître sur les
+                différents outils du barman.
+              </p>
             </div>
           </Link>
           <Link
@@ -54,13 +59,16 @@ const Articles = () => {
               alt={"les ingrédients du barman"}
               width={250}
               height={200}
-              className="mb-6 mt-6 h-40 w-auto rounded-xl shadow-xl shadow-black sm:h-52"
+              className="mb-6 mt-6 h-40 w-auto rounded-xl shadow-xl shadow-black brightness-95 transition-all duration-700 hover:scale-110 hover:brightness-110 sm:h-52"
             />
             <h2 className="font-bold text-orange-500 sm:text-2xl">
               Les ingrédients
             </h2>
             <div className="relative my-2 flex h-full items-center justify-center">
-              <p className="text-pretty p-2 text-xs sm:text-sm">La connaissance des produits est essentiel pour créer vos propres recettes comme un vrai pro.</p>
+              <p className="text-pretty p-2 text-xs sm:text-sm">
+                La connaissance des produits est essentiel pour créer vos
+                propres recettes comme un vrai pro.
+              </p>
             </div>
           </Link>
           <Link
@@ -72,13 +80,16 @@ const Articles = () => {
               alt={"technique de cocktail"}
               width={250}
               height={200}
-              className="mb-6 mt-6 h-40 w-auto rounded-xl shadow-xl shadow-black sm:h-52"
+              className="mb-6 mt-6 h-40 w-auto rounded-xl shadow-xl shadow-black brightness-95 transition-all duration-700 hover:scale-110 hover:brightness-110 sm:h-52"
             />
             <h2 className="font-bold text-orange-500 sm:text-2xl">
               Les techniques
             </h2>
             <div className="relative my-2 flex h-full items-center justify-center">
-              <p className="text-pretty p-2 text-xs sm:text-sm">Découvrez toutes les techniques indispensables pour réaliser tous les cocktails du monde.</p>
+              <p className="text-pretty p-2 text-xs sm:text-sm">
+                Découvrez toutes les techniques indispensables pour réaliser
+                tous les cocktails du monde.
+              </p>
             </div>
           </Link>
         </div>
