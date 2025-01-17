@@ -32,16 +32,13 @@ const Carousel = ({ dataUrl }) => {
   }
 
   return (
-    <div className="relative flex items-center justify-center  sm:py-16">
+    <div className="relative flex items-center justify-center sm:py-16">
       <button
         aria-label="recette precedente"
         className="absolute left-0 z-20"
         onClick={handlePrevClick}
       >
-        <FontAwesomeIcon
-          icon={faArrowLeft}
-          className="h-8 w-8 text-white"
-        />
+        <FontAwesomeIcon icon={faArrowLeft} className="h-8 w-8 text-white" />
       </button>
       <div className="relative flex h-[500px] w-[350px] items-center justify-center overflow-hidden sm:w-[600px]">
         {cocktails.map((cocktail, index) => {
@@ -66,6 +63,11 @@ const Carousel = ({ dataUrl }) => {
             blur = "";
           }
 
+          let pointer;
+          if (position !== "center") {
+            pointer = "pointer-events-none";
+          }
+
           return (
             <div
               key={cocktail.id}
@@ -79,16 +81,16 @@ const Carousel = ({ dataUrl }) => {
             >
               <Link
                 href={`/recipes/${cocktail.id}`}
-                className={`mx-10 flex h-72 flex-col  items-center justify-between rounded-xl bg-black bg-opacity-10 p-4 sm:-mx-2 sm:h-96 sm:w-64 ${scale} ${blur}`}
+                className={`mx-10 flex h-72 flex-col items-center justify-between rounded-xl bg-black bg-opacity-10 p-4 sm:-mx-2 sm:h-96 sm:w-64 ${scale} ${blur} ${pointer}`}
               >
                 <Image
                   src={`/${cocktail.url_image}`}
                   alt={cocktail.name}
                   width={250}
                   height={200}
-                  className="h-36 w-auto shadow-xl shadow-black rounded-xl sm:h-48"
+                  className="h-36 w-auto rounded-xl shadow-xl shadow-black brightness-95 transition-all duration-700 hover:scale-105 hover:brightness-110 sm:h-48"
                 />
-                <h2 className="font-bold text-orange-500 text-center sm:text-2xl">
+                <h2 className="text-center font-bold text-orange-500 sm:text-2xl">
                   {cocktail.name}
                 </h2>
                 <p className="text-center text-xs sm:text-sm">
@@ -107,10 +109,7 @@ const Carousel = ({ dataUrl }) => {
         className="absolute right-0 z-20"
         onClick={handleNextClick}
       >
-        <FontAwesomeIcon
-          icon={faArrowRight}
-          className="h-8 w-8 text-white "
-        />
+        <FontAwesomeIcon icon={faArrowRight} className="h-8 w-8 text-white" />
       </button>
     </div>
   );
