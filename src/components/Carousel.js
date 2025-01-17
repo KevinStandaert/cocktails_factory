@@ -81,14 +81,14 @@ const Carousel = ({ dataUrl }) => {
             >
               <Link
                 href={`/recipes/${cocktail.id}`}
-                className={`mx-10 flex h-72 flex-col items-center justify-between rounded-xl bg-black bg-opacity-10 p-4 sm:-mx-2 sm:h-96 sm:w-64 ${scale} ${blur} ${pointer}`}
+                className={`group hover:bg-opacity-30 transition-all duration-700 mx-10 flex h-72 flex-col items-center justify-between rounded-xl bg-black bg-opacity-10 p-4 sm:-mx-2 sm:h-96 sm:w-64 ${scale} ${blur} ${pointer}`}
               >
                 <Image
                   src={`/${cocktail.url_image}`}
                   alt={cocktail.name}
                   width={250}
                   height={200}
-                  className="h-36 w-auto rounded-xl shadow-xl shadow-black brightness-95 transition-all duration-700 hover:rotate-2 hover:scale-105 hover:brightness-110 sm:h-48"
+                  className="h-36 w-auto rounded-xl shadow-xl shadow-black brightness-95 transition-all duration-700 group-hover:rotate-2 group-hover:scale-105 group-hover:brightness-110 sm:h-48"
                 />
                 <h2 className="text-center font-bold text-orange-500 sm:text-2xl">
                   {cocktail.name}
